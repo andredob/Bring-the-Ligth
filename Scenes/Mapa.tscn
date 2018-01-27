@@ -1,11 +1,14 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://Tileset1.tres" type="TileSet" id=1]
+[ext_resource path="res://plataformaCai.tscn" type="PackedScene" id=2]
+[ext_resource path="res://PlataformaSobe.tscn" type="PackedScene" id=3]
 
 [node name="Mapa" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
 
+transform/pos = Vector2( -130.031, -36.4882 )
 mode = 0
 tile_set = ExtResource( 1 )
 cell/size = Vector2( 16, 16 )
@@ -20,6 +23,67 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( 196624, 536870916, 196625, 0, 196626, 0, 196627, 0, 196628, 0, 196629, 4, 262144, 0, 262145, 0, 262146, 0, 262147, 0, 262148, 0, 262149, 4, 262159, 536870916, 262160, 0, 262166, 4, 327685, 0, 327686, 4, 327694, 536870916, 327695, 0, 327703, 4, 393222, 0, 393223, 4, 393229, 536870916, 393230, 0, 393239, 0, 458759, 0, 458760, 0, 458761, 0, 458762, 0, 458763, 0, 458764, 0, 458765, 0, 458775, 0, 524311, 0, 524312, 0, 524313, 0, 524314, 0, 524316, 3, 524318, 3, 524320, 3, 524322, 3, 589833, 4 )
+tile_data = IntArray( 196624, 536870916, 196625, 0, 196626, 0, 196627, 0, 196628, 0, 196629, 4, 262144, 0, 262145, 0, 262146, 0, 262147, 0, 262148, 0, 262149, 4, 262159, 536870916, 262160, 0, 262166, 4, 262188, 0, 262189, 0, 262193, 0, 262194, 0, 262195, 0, 262196, 0, 262197, 0, 262198, 0, 327685, 0, 327686, 4, 327694, 536870916, 327695, 0, 327703, 4, 327724, 0, 393222, 0, 393223, 4, 393229, 536870916, 393230, 0, 393239, 0, 393260, 0, 458759, 0, 458760, 0, 458761, 0, 458762, 0, 458763, 0, 458764, 0, 458765, 0, 458775, 0, 458796, 0, 524311, 0, 524312, 0, 524313, 0, 524314, 0, 524328, 0, 524329, 0, 524330, 0, 524331, 0, 524332, 0, 589868, 0, 655404, 0, 655405, 0, 655409, 0, 720942, 0, 720943, 0, 720944, 0, 720946, 0, 786483, 0, 786484, 0, 786485, 0, 786486, 0, 786487, 0, 786488, 0, 786502, 0, 786503, 4, 852039, 0, 852040, 4, 852058, 0, 852059, 0, 917576, 0, 917577, 4, 917592, 0, 917593, 0, 917594, 0, 917595, 0, 983113, 0, 983114, 4, 983126, 0, 983127, 0, 983128, 0, 983129, 0, 1048650, 0, 1048651, 4, 1048660, 0, 1048661, 0, 1048662, 0, 1048663, 0, 1114187, 0, 1114188, 4, 1179724, 0, 1179725, 4, 1245261, 0, 1245262, 4, 1310798, 0, 1310799, 0, 1310800, 0, 1310804, 0, 1310805, 0, 1310806, 0, 1310807, 0, 1310808, 0, 1310809, 0, 1310810, 0, 1310811, 0, 1310812, 0, 1310813, 0, 1310814, 0, 1310815, 0 )
+
+[node name="PlataformaCai" type="Node" parent="."]
+
+editor/display_folded = true
+
+[node name="KinematicBody2D" parent="PlataformaCai" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 331.21, 98.7176 )
+transform/scale = Vector2( 0.559976, 0.144067 )
+
+[node name="KinematicBody2D1" parent="PlataformaCai" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 378.762, 98.1773 )
+transform/scale = Vector2( 0.559976, 0.144067 )
+
+[node name="KinematicBody2D2" parent="PlataformaCai" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 424.693, 98.1773 )
+transform/scale = Vector2( 0.559976, 0.144067 )
+
+[node name="KinematicBody2D3" parent="PlataformaCai" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 471.164, 97.0965 )
+transform/scale = Vector2( 0.559976, 0.144067 )
+
+[node name="PlataformaSobe" type="Node" parent="."]
+
+[node name="PlataformaSobe" parent="PlataformaSobe" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 557.09, 88.4507 )
+transform/scale = Vector2( 0.391384, 0.0596356 )
+
+[node name="PlataformaSobe1" parent="PlataformaSobe" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 801.874, 157.617 )
+transform/scale = Vector2( 0.391384, 0.0596356 )
+
+[node name="PlataformaSobe2" parent="PlataformaSobe" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 839.159, 98.1773 )
+transform/scale = Vector2( 0.391384, 0.0596356 )
+
+[node name="PlataformaSobe3" parent="PlataformaSobe" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 885.09, 156.536 )
+transform/scale = Vector2( 0.391384, 0.0596356 )
+
+[node name="PlataformaSobe4" parent="PlataformaSobe" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 924.537, 98.1773 )
+transform/scale = Vector2( 0.391384, 0.0596356 )
+
+[node name="PlataformaSobe5" parent="PlataformaSobe" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 961.821, 156.536 )
+transform/scale = Vector2( 0.391384, 0.0596356 )
+
+[node name="PlataformaSobe6" parent="PlataformaSobe" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1188.77, 284.062 )
+transform/scale = Vector2( 0.391384, 0.0596356 )
 
 
