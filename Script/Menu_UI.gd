@@ -13,16 +13,16 @@ func _ready():
 	pass
 
 # Main Menu UI
-func _on_Bt_NewGame_pressed():
+func _on_Bt_newGame_pressed():
 	print ("Starting game!");
 	#get_tree().change_scene("");
 
-func _on_Bt_Options_pressed():
+func _on_Bt_options_pressed():
 	print ("Moving to the options menu!");
 	mainMenu.hide();
 	optionsMenu.show();
 
-func _on_Bt_Quit_pressed():
+func _on_Bt_quitGame_pressed():
 	print ("Exiting game!");
 	get_tree().quit();
 
@@ -31,3 +31,5 @@ func _on_Bt_Return_pressed():
 	optionsMenu.hide();
 	mainMenu.show();
 	
+
+
