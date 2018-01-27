@@ -88,8 +88,4 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="StartPos" type="Position2D" parent="."]
-
-[node name="EndPos" type="Position2D" parent="."]
-
 
