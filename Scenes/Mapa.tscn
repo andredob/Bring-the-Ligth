@@ -4,7 +4,7 @@
 [ext_resource path="res://plataformaCai.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PlataformaSobe.tscn" type="PackedScene" id=3]
 
-[node name="Mapa" type="Node"]
+[node name="Mapa 1" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
 

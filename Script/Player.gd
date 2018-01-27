@@ -24,6 +24,8 @@ const SLIDE_STOP_MIN_TRAVEL = 1.0 # One pixel
 var velocity = Vector2()
 var on_air_time = 100
 var jumping = false
+onready var sprite = get_node("AnimatedSprite")
+var anim = "parada"
 
 var prev_jump_pressed = false
 
@@ -38,16 +40,22 @@ func _fixed_process(delta):
 	
 	var stop = true
 	
-	if (walk_left):
+	if ( walk_left):
 		if (velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED):
 			force.x -= WALK_FORCE
 			stop = false
+			anim = "correndo"
+			sprite.play(anim)
 	elif (walk_right):
 		if (velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED):
 			force.x += WALK_FORCE
 			stop = false
+			anim = "correndo"
+			sprite.play(anim)
 	
 	if (stop):
+		anim = "parada"
+		sprite.play(anim)
 		var vsign = sign(velocity.x)
 		var vlen = abs(velocity.x)
 		
@@ -109,9 +117,9 @@ func _fixed_process(delta):
 		jumping = false
 		
 	if(walk_left):
-		get_node("normal").set_flip_h(true);
+		sprite.set_flip_h(true);
 	if(walk_right):
-		get_node("normal").set_flip_h(false);
+		sprite.set_flip_h(false);
 	
 		
 		
