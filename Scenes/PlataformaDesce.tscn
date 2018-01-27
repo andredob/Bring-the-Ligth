@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 13.2131, 13 )
 
 [node name="PlataformaDesce" type="KinematicBody2D"]
 
@@ -21,6 +21,11 @@ collision/margin = 0.08
 script/script = ExtResource( 1 )
 altura = 150
 
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 2 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 transform/pos = Vector2( -1.90735e-06, -0.500002 )
@@ -28,9 +33,5 @@ transform/scale = Vector2( 2.46154, 2.42308 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
-
-[node name="Sprite" type="Sprite" parent="."]
-
-texture = ExtResource( 2 )
 
 

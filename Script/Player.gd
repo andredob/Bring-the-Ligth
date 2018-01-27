@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-onready var ground_ray = get_node("RayCast2D")
+onready var pe_direito= get_node("peD")
+onready var pe_esquerdo= get_node("peE")
 onready var sprite = get_node("AnimatedSprite")
 
 
@@ -41,7 +42,7 @@ func _fixed_process(delta):
 	else:
 		get_node("SamplePlayer").play("concreteStep", false)
 		
-	if Input.is_action_pressed("pula") and ground_ray.is_colliding():
+	if Input.is_action_pressed("pula") and (pe_direito.is_colliding() or pe_esquerdo.is_colliding()):
 		get_node("SamplePlayer").play("footStepWoodsBit", false)
 		print("pula")
 		vel.y = JUMPS_PEED

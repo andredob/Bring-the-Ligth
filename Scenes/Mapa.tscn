@@ -47,6 +47,5 @@ transform/pos = Vector2( 483.983, 349.316 )
 [node name="PlataformaSobe" parent="PlataformaCai/PlataformaCai2/PlataformaSobe" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 574.163, 334.52 )
-altura = -150
 
 

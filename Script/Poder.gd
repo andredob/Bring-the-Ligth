@@ -9,7 +9,7 @@ func _ready():
 func _process(delta):
 	set_pos(get_pos()+dir*vel*delta)
 	
-	if( get_global_pos().distance_to(get_parent().get_node("Player").get_global_pos()) >=800  ):
+	if( get_global_pos().distance_to(get_parent().get_node("Player").get_global_pos()) >=750  ):
 		queue_free()
 	
 	pass
