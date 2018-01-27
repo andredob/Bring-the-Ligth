@@ -12,11 +12,12 @@ height = 22.0
 
 script/source = "extends KinematicBody2D
 # Laws of Physics
-const GRAVITY = Vector2(0, 1000)
-# Movement Constants
+const GRAVITY = Vector2(0, 0)
+# movementx Constants
 const FLOOR_NORMAL = Vector2(0, -1)
 const SLOPE_FRICTION = 0
-const MOVEMENT_SPEED = 1
+const movementx_SPEED = 1
+const movementy_SPEED = 1
 const ACCELERATION = 0.8
 const SHOOT_DELAY = 5
 
@@ -24,16 +25,19 @@ const SHOOT_DELAY = 5
 
 # Player Variables
 var velocity = Vector2()
-var distPercorrida = 200
-var movement = 40
+var distPercorridax = 30
+var distPercorriday = 30
+var movementx = 40
+var movementy = 40
 var distance2Hero = 1000
-var viewRange = 150
+var viewRange = 350
 var shootTime = SHOOT_DELAY
 onready var player = get_parent().get_node(\"Player\")
-var shootPrefab = preload(\"res://Entities/Missile.tscn\")
+var shootPrefab = preload(\"res://Entities/EnergyCell.tscn\")
  
 # Start
 func _ready():
+	randomize()
 	set_fixed_process(true)
 	pass
  
@@ -45,34 +49,43 @@ func _fixed_process(delta):
 	velocity += GRAVITY * delta
 	# Move and Slide
 	velocity = move_and_slide(velocity, FLOOR_NORMAL, SLOPE_FRICTION)
-	# Movement
+	# movementx
 
-	# Set movement speed
-	movement *= MOVEMENT_SPEED
+	# Set movementx speed
+	movementx *= movementx_SPEED
+	movementy *= movementy_SPEED
 	# Change horizontal velocity
-	velocity.x = lerp(velocity.x, movement, ACCELERATION)
-	
-	#Decrementa o timer do tiro
-	shootTime -= 1
+	velocity.x = lerp(velocity.x, movementx, ACCELERATION)
+	velocity.y = lerp(velocity.y, movementy, ACCELERATION)
 	
 	#Verifica se o player está proximo
 	if(distance2Player < viewRange):
-		#Instancia um projétil que irá seguir o players
-		if(shootTime <= 0):
-			var m = shootPrefab.instance()
-			m.set_pos(get_pos())
-			get_parent().add_child(m)
-			shootTime = SHOOT_DELAY
-			
 		if(player.get_global_pos().x < get_global_pos().x):
-			movement = -40
+			movementx = -40
 		else:
-			movement = 40
+			movementx = 40
+		if(player.get_global_pos().y < get_global_pos().y):
+			movementy = -40
+		else:
+			movementy = 40
 	else:
-		distPercorrida -= 1
-		if(distPercorrida == 0):
-			movement *= -1
-			distPercorrida = 200
+		distPercorridax -= 1
+		if(distPercorridax == 0):
+			movementx *= -1
+			
+			randomize(1)
+			var random = randi()%201+1
+
+			distPercorridax = random
+		
+		distPercorriday -= 1
+		if(distPercorriday == 0):
+			movementy *= -1
+			
+			randomize(5)
+			var random = randi()%201+1
+			
+			distPercorriday = random
 
 
 
@@ -81,7 +94,7 @@ func _fixed_process(delta):
 	
      "
 
-[node name="KinematicBody" type="KinematicBody2D"]
+[node name="Fantasma" type="KinematicBody2D"]
 
 transform/pos = Vector2( 0, -8 )
 input/pickable = false
