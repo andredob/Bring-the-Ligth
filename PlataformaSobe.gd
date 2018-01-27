@@ -3,7 +3,7 @@ var num = 0.5
 var vel = num
 var subir = true
 var veld = 0.5
-export var altura = 150
+export var altura = -150
 
 onready var init_pos = get_global_pos()
 

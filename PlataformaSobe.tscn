@@ -1,16 +1,37 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://Sprites/tile2.png" type="Texture" id=1]
+[ext_resource path="res://PlataformaSobe.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/tile2.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [node name="PlataformaSobe" type="KinematicBody2D"]
 
+transform/scale = Vector2( 0.642841, 0.227331 )
 input/pickable = false
-collision/layers = 1
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 3.25017, 0, 0, 3.16553, -3.96114, -4.8414 )
+shapes/0/trigger = false
+collision/layers = 2
 collision/mask = 1
 collision/margin = 0.08
+script/script = ExtResource( 1 )
+altura = -150
 
 [node name="Sprite" type="Sprite" parent="."]
 
-texture = ExtResource( 1 )
+transform/pos = Vector2( -4.40126, -3.96114 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -3.96114, -4.8414 )
+transform/scale = Vector2( 3.25017, 3.16553 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 
