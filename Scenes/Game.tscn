@@ -7,32 +7,10 @@
 
 script/source = "extends Node
 
-var m = Vector2()
-var p = Vector2()
-export var bullet_scene
-onready var camera = get_node(\"camera\")
-#var vector
 func _ready():
-	set_process_input(true)
-
+	pass
 func _input(ev):
-	
-	if (ev.type==InputEvent.MOUSE_BUTTON):
-		p = get_node(\"Player\").get_global_pos()
-		m = camera.get_global_mouse_pos()
-		
-		var vector = (m - p).normalized()
-
-		var x = rad2deg(sin(vector.angle()))
-		print(x)
-		
-		
-		
-		
-		
-		#print(rad2deg(p.angle_to(m)))
-		
-"
+	pass"
 
 [node name="Game" type="Node"]
 
@@ -43,24 +21,5 @@ script/script = SubResource( 1 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 14.5092, 221.989 )
-
-[node name="camera" type="Camera2D" parent="."]
-
-anchor_mode = 1
-rotating = false
-current = false
-zoom = Vector2( 1, 1 )
-limit/left = -10000000
-limit/top = -10000000
-limit/right = 10000000
-limit/bottom = 10000000
-drag_margin/h_enabled = true
-drag_margin/v_enabled = true
-smoothing/enable = false
-smoothing/speed = 5.0
-drag_margin/left = 0.2
-drag_margin/top = 0.2
-drag_margin/right = 0.2
-drag_margin/bottom = 0.2
 
 
