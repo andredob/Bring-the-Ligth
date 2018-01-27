@@ -1,43 +1,12 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://Script/Menu_UI.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Menu_UIAnimation.tres" type="Animation" id=2]
-[ext_resource path="res://Sprites/UI/MENU_Fixed.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/UI/faixa1-transparente.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/UI/faixa3-transparente.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/UI/faixa2-transparente.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/UI/B_Back.tex" type="Texture" id=7]
-[ext_resource path="res://Sprites/UI/W_Back.tex" type="Texture" id=8]
-
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends AnimationPlayer
-
-# class member variables go here, for example:
-# var a = 2
-# var b = \"textvar\"
-var cont = 0
-
-func _ready():
-	set_process(true)
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
-
-func _process(delta):
-	cont+=1*delta
-	print(cont)
-	print(\"animation\")
-	if(cont > 1.97):
-		_playMenuOptions()
-		print(\"aaa\")
-		cont=0
-	pass
-
-
-func _playMenuOptions():
-	play(\"moveOpitions\", false)
-	pass"
+[ext_resource path="res://Sprites/UI/MENU_Fixed.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/UI/faixa1-transparente.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/faixa3-transparente.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/faixa2-transparente.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/UI/B_Back.tex" type="Texture" id=6]
+[ext_resource path="res://Sprites/UI/W_Back.tex" type="Texture" id=7]
 
 [sub_resource type="ShortCut" id=2]
 
@@ -111,23 +80,11 @@ margin/bottom = 720.0
 custom_constants/separation = 10
 alignment = 0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Main Menu/VBoxContainer"]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/moveOpitions = ExtResource( 2 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = "moveOpitions"
-script/script = SubResource( 1 )
-
 [node name="MENU_Fixed" type="Sprite" parent="Main Menu/VBoxContainer"]
 
 transform/pos = Vector2( 612.916, 340.539 )
 transform/scale = Vector2( 0.723925, 0.723925 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Bt_startGame" type="TextureButton" parent="Main Menu/VBoxContainer/MENU_Fixed"]
 
@@ -140,15 +97,15 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 0
 size_flags/vertical = 2
-margin/left = 780.0
+margin/left = 767.0
 margin/top = 660.0
-margin/right = 325.0
+margin/right = 312.0
 margin/bottom = 570.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = SubResource( 2 )
-textures/normal = ExtResource( 4 )
-textures/hover = SubResource( 3 )
+textures/normal = SubResource( 3 )
+textures/hover = ExtResource( 3 )
 params/resize_mode = 0
 params/scale = Vector2( 0.7, 0.7 )
 params/stretch_mode = 0
@@ -167,8 +124,8 @@ margin/bottom = 92.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 5 )
-textures/hover = SubResource( 4 )
+textures/normal = SubResource( 4 )
+textures/hover = ExtResource( 4 )
 params/resize_mode = 0
 params/scale = Vector2( 0.7, 0.7 )
 params/stretch_mode = 0
@@ -187,8 +144,8 @@ margin/bottom = 256.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 6 )
-textures/hover = SubResource( 5 )
+textures/normal = SubResource( 5 )
+textures/hover = ExtResource( 5 )
 params/resize_mode = 0
 params/scale = Vector2( 0.7, 0.7 )
 params/stretch_mode = 0
@@ -346,8 +303,8 @@ margin/bottom = 183.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 7 )
-textures/hover = ExtResource( 8 )
+textures/normal = ExtResource( 6 )
+textures/hover = ExtResource( 7 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
@@ -361,9 +318,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 0.0
+margin/top = 7.0
 margin/right = 0.0
-margin/bottom = 0.0
+margin/bottom = -7.0
 custom_constants/margin_top = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Pause_UI"]
