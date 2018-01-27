@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://Script/Menu_UI.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/UI/Bring_the_light_title.tex" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Sprites/UI/W_Options.tex" type="Texture" id=6]
 [ext_resource path="res://Sprites/UI/B_QuitGame.tex" type="Texture" id=7]
 [ext_resource path="res://Sprites/UI/W_QuitGame.tex" type="Texture" id=8]
+[ext_resource path="res://Sprites/UI/B_Back.tex" type="Texture" id=9]
+[ext_resource path="res://Sprites/UI/W_Back.tex" type="Texture" id=10]
 
 [node name="Menu_UI" type="Control"]
 
@@ -77,7 +79,6 @@ custom_constants/margin_top = 80
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main Menu/VBoxContainer/MarginContainer 2"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -104,7 +105,6 @@ enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 3 )
 textures/hover = ExtResource( 4 )
-textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
@@ -123,7 +123,6 @@ enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 5 )
 textures/hover = ExtResource( 6 )
-textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
@@ -142,28 +141,73 @@ enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 7 )
 textures/hover = ExtResource( 8 )
-textures/focused = ExtResource( 8 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
-[node name="Options_UI" type="MarginContainer" parent="."]
+[node name="Options_UI" type="VBoxContainer" parent="."]
 
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
-focus/stop_mouse = true
+focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
-custom_constants/margin_top = 20
+alignment = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Options_UI"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1280.0
+margin/bottom = 91.0
+custom_constants/margin_top = 40
+custom_constants/margin_left = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options_UI/MarginContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 40.0
+margin/top = 40.0
+margin/right = 1280.0
+margin/bottom = 91.0
+custom_constants/separation = 50
+alignment = 0
+
+[node name="Bt_Back" type="TextureButton" parent="Options_UI/MarginContainer/VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1240.0
+margin/bottom = 51.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 9 )
+textures/hover = ExtResource( 10 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [connection signal="pressed" from="Main Menu/VBoxContainer/MarginContainer 2/VBoxContainer/Bt_newGame" to="." method="_on_Bt_newGame_pressed"]
 
 [connection signal="pressed" from="Main Menu/VBoxContainer/MarginContainer 2/VBoxContainer/Bt_options" to="." method="_on_Bt_options_pressed"]
 
 [connection signal="pressed" from="Main Menu/VBoxContainer/MarginContainer 2/VBoxContainer/Bt_quitGame" to="." method="_on_Bt_quitGame_pressed"]
+
+[connection signal="pressed" from="Options_UI/MarginContainer/VBoxContainer/Bt_Back" to="." method="_on_Bt_Back_pressed"]
 
 

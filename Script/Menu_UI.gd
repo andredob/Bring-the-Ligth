@@ -15,7 +15,7 @@ func _ready():
 # Main Menu UI
 func _on_Bt_newGame_pressed():
 	print ("Starting game!");
-	#get_tree().change_scene("");
+	get_tree().change_scene("Scenes/Game.tscn");
 
 func _on_Bt_options_pressed():
 	print ("Moving to the options menu!");
@@ -27,9 +27,6 @@ func _on_Bt_quitGame_pressed():
 	get_tree().quit();
 
 # Options UI
-func _on_Bt_Return_pressed():
+func _on_Bt_Back_pressed():
 	optionsMenu.hide();
 	mainMenu.show();
-	
-
-
