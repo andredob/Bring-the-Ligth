@@ -2,12 +2,15 @@ extends Control
 
 var mainMenu;
 var optionsMenu;
+var pauseMenu;
 
 func _ready():
 	mainMenu = self.get_node("Main Menu");
 	mainMenu.show();
 	optionsMenu = self.get_node("Options_UI");
 	optionsMenu.hide();
+	pauseMenu = self.get_node("Pause_UI");
+	pauseMenu.hide();
 	
 	set_process_input(true);
 	pass
@@ -30,3 +33,12 @@ func _on_Bt_quitGame_pressed():
 func _on_Bt_Back_pressed():
 	optionsMenu.hide();
 	mainMenu.show();
+
+
+func _on_Bt_resume_pressed():
+	pauseMenu.hide();
+	get_tree().set_pause(false);
+
+
+func _on_Bt_quit_pressed():
+	get_tree().change_scene("Scenes/Menu_UI.tscn");
