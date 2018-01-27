@@ -15,12 +15,20 @@ var acc = Vector2()
 var vel = Vector2(0,0)
 var anim = "parada"
 var pre_shoot = preload("res://Entities/Poder.tscn")
-
+var mouse_pos
 
 func _ready():
 	get_node("SamplePlayer").play("energyShield", false)
 	#get_node("SamplePlayer").play("creepyMoaning", false)
 	set_fixed_process(true)
+	
+func _input(ev):
+   # Mouse in viewport coordinates
+
+
+   if (ev.type==InputEvent.MOUSE_MOTION):
+       mouse_pos = ev.pos
+
 
 func _fixed_process(delta):
 	acc.y = GRAVITY
@@ -40,8 +48,12 @@ func _fixed_process(delta):
 		
 	if Input.is_action_pressed("shoot"):
 		var tiro = pre_shoot.instance()
+		var dir = get_global_mouse_pos() - get_global_pos()
+		dir  = dir.normalized()
+		tiro.dir = dir 
 		tiro.set_global_pos(get_global_pos())
 		get_parent().add_child(tiro)
+		
 		pass
 		
 	vel += acc * delta
