@@ -1,14 +1,11 @@
 extends KinematicBody2D
-
-var _gravity = 0
-var _movement = Vector2()
-
-func shoot(directional_force, gravity):
-	_movement = directional_force
-	_gravity = gravity
+var vel = 300
+var dir = Vector2(1,0)
+func _ready():
+	set_process(true)
+	pass
 	
-	set_fixed_process(true)
+func _process(delta):
+	set_pos(get_pos()+dir*vel*delta)
+	pass
 
-func _fixed_process(delta):
-	_movement.y += delta * _gravity
-	move(_movement)
