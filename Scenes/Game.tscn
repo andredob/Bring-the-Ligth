@@ -9,6 +9,6 @@
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 32.9688, 15.4913 )
+transform/pos = Vector2( 173.264, 5.47021 )
 
 
