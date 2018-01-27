@@ -20,6 +20,6 @@ script/script = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 14.5092, 221.989 )
+transform/pos = Vector2( -49.1791, 219.999 )
 
 
