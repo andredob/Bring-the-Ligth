@@ -3,11 +3,6 @@
 [ext_resource path="res://PlataformaCai.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/tile1.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -30,28 +25,22 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -14.4343 ), Vector2( 1.35755, -14.4343 ), Vector2( 0, -12.8793 ), Vector2( -1.35755, -14.4343 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
 [node name="PlataformaCai" type="KinematicBody2D"]
 
 transform/pos = Vector2( 1, 0 )
 transform/scale = Vector2( 0.73662, 0.643082 )
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 2.44441, 0, 0, 1.2222, -0.347778, -15.8673 )
-shapes/0/trigger = false
 collision/layers = 2
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 queda_tempo = 0.5
 respawn = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
-transform/pos = Vector2( -0.347778, -15.8673 )
-transform/scale = Vector2( 2.44441, 1.2222 )
-shape = SubResource( 3 )
-trigger = false
-_update_shape_index = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 
@@ -108,12 +97,23 @@ autoplay = ""
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 2.44441, 0, 0, 1.2222, 0.754384, -11.3585 )
+shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+
+transform/pos = Vector2( 0.754384, -11.3585 )
+transform/scale = Vector2( 2.44441, 1.2222 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
 
 [connection signal="timeout" from="TimerCai" to="." method="_on_TimerCai_timeout"]
 
