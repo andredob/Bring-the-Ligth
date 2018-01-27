@@ -24,6 +24,8 @@ const SLIDE_STOP_MIN_TRAVEL = 1.0 # One pixel
 var velocity = Vector2()
 var on_air_time = 100
 var jumping = false
+onready var sprite = get_node("AnimatedSprite")
+var anim = "parada"
 
 var prev_jump_pressed = false
 
@@ -38,16 +40,22 @@ func _fixed_process(delta):
 	
 	var stop = true
 	
-	if (walk_left):
+	if ( walk_left):
 		if (velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED):
 			force.x -= WALK_FORCE
 			stop = false
+			anim = "correndo"
+			sprite.play(anim)
 	elif (walk_right):
 		if (velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED):
 			force.x += WALK_FORCE
 			stop = false
+			anim = "correndo"
+			sprite.play(anim)
 	
 	if (stop):
+		anim = "parada"
+		sprite.play(anim)
 		var vsign = sign(velocity.x)
 		var vlen = abs(velocity.x)
 		
@@ -107,7 +115,14 @@ func _fixed_process(delta):
 	if (jumping and velocity.y > 0):
 		# If falling, no longer jumping
 		jumping = false
+		
+	if(walk_left):
+		sprite.set_flip_h(true);
+	if(walk_right):
+		sprite.set_flip_h(false);
 	
+		
+		
 	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not prev_jump_pressed and not jumping):
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
@@ -116,7 +131,7 @@ func _fixed_process(delta):
 	
 	on_air_time += delta
 	prev_jump_pressed = jump
-
+	
 
 func _ready():
 	set_fixed_process(true)
