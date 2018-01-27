@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 25.318
 
-[node name="Sprite" type="KinematicBody2D"]
+[node name="shoot" type="KinematicBody2D"]
 
 transform/scale = Vector2( 0.3, 0.3 )
 input/pickable = false

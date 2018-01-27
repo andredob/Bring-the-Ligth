@@ -1,5 +1,6 @@
 extends KinematicBody2D
-var vel = 300
+var vel = 500
+
 var dir = Vector2(1,0)
 func _ready():
 	set_process(true)
