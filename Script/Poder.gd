@@ -1,14 +1,16 @@
 extends KinematicBody2D
+var vel = 500
 
-var _gravity = 0
-var _movement = Vector2()
-
-func shoot(directional_force, gravity):
-	_movement = directional_force
-	_gravity = gravity
+var dir = Vector2(1,0)
+func _ready():
+	set_process(true)
+	pass
 	
-	set_fixed_process(true)
+func _process(delta):
+	set_pos(get_pos()+dir*vel*delta)
+	
+	if( get_global_pos().distance_to(get_parent().get_node("Player").get_global_pos()) >=750  ):
+		queue_free()
+	
+	pass
 
-func _fixed_process(delta):
-	_movement.y += delta * _gravity
-	move(_movement)
