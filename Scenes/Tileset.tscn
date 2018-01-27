@@ -13,10 +13,10 @@ vertices = Vector2Array( -8, -8, -8, -9, 8, -9, 8, -8 )
 polygons = [ IntArray( 0, 1, 2, 3 ) ]
 outlines = [ Vector2Array( -8, -8, -8, -9, 8, -9, 8, -8 ) ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 2 )
+points = Vector2Array( 8, 8, -8, 8, -8, -8 )
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 
@@ -85,7 +85,6 @@ _update_shape_index = 0
 
 [node name="Tile2" type="Sprite" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 32, 0 )
 texture = ExtResource( 1 )
 region = true
@@ -112,7 +111,6 @@ _update_shape_index = 0
 
 [node name="Tile3" type="Sprite" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 48, 0 )
 texture = ExtResource( 1 )
 region = true
@@ -121,8 +119,8 @@ region_rect = Rect2( 256, 48, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Tile3"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -6 )
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -12 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -131,16 +129,16 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile3/StaticBody2D"]
+[node name="CollisionPolygon2D1" type="CollisionPolygon2D" parent="Tile3/StaticBody2D"]
 
-transform/pos = Vector2( 0, -6 )
-shape = SubResource( 3 )
+transform/pos = Vector2( 0, -12 )
+build_mode = 0
+polygon = Vector2Array( -8, -8, -8, 8, 8, 8 )
+shape_range = Vector2( 0, 0 )
 trigger = false
-_update_shape_index = 0
 
 [node name="Tile4" type="Sprite" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 64, 0 )
 texture = ExtResource( 1 )
 region = true
