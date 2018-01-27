@@ -18,6 +18,7 @@ const FLOOR_NORMAL = Vector2(0, -1)
 const SLOPE_FRICTION = 0
 const MOVEMENT_SPEED = 1
 const ACCELERATION = 0.8
+const SHOOT_DELAY = 5
 
 
 
@@ -27,7 +28,9 @@ var distPercorrida = 200
 var movement = 40
 var distance2Hero = 1000
 var viewRange = 150
+var shootTime = SHOOT_DELAY
 onready var player = get_parent().get_node(\"Player\")
+var shootPrefab = preload(\"res://Entities/Missile.tscn\")
  
 # Start
 func _ready():
@@ -49,18 +52,35 @@ func _fixed_process(delta):
 	# Change horizontal velocity
 	velocity.x = lerp(velocity.x, movement, ACCELERATION)
 	
+	#Decrementa o timer do tiro
+	shootTime -= 1
+	
+	#Verifica se o player está proximo
 	if(distance2Player < viewRange):
+		#Instancia um projétil que irá seguir o players
+		if(shootTime <= 0):
+			var m = shootPrefab.instance()
+			m.set_pos(get_pos())
+			get_parent().add_child(m)
+			shootTime = SHOOT_DELAY
+			
 		if(player.get_global_pos().x < get_global_pos().x):
 			print(\"Player à vista\")
 			movement = -40
 		else:
-			movement = 40	
+			movement = 40
 	else:
 		distPercorrida -= 1
 		if(distPercorrida == 0):
 			movement *= -1
 			print(movement)
 			distPercorrida = 200
+
+
+
+	
+
+	
      "
 
 [node name="KinematicBody" type="KinematicBody2D"]
