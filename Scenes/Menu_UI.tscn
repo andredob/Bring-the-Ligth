@@ -304,6 +304,8 @@ params/stretch_mode = 0
 
 [node name="Pause_UI" type="MarginContainer" parent="."]
 
+editor/display_folded = true
+visibility/visible = false
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
