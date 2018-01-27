@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=1]
+
+[ext_resource path="res://Script/movimentoTeste.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/anda1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/anda2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/anda3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/anda4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/anda5.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/anda6.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/normal.png" type="Texture" id=8]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 23.684
+height = 37.9765
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "correndo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "parada",
+"speed": 5.0
+} ]
+
+[node name="Area2D" type="KinematicBody2D"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -41.1303, 3.77281 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="normal" type="AnimatedSprite" parent="."]
+
+transform/pos = Vector2( -42.2111, -1.40114 )
+transform/scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 2 )
+animation = "parada"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -41.1303, 3.77281 )
+transform/scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Tileset1.tres" type="TileSet" id=1]
-[ext_resource path="res://plataformaCai.tscn" type="PackedScene" id=2]
-[ext_resource path="res://PlataformaSobe.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Script/PlataformaCai.gd" type="Script" id=2]
+[ext_resource path="res://plataformaCai.tscn" type="PackedScene" id=3]
+[ext_resource path="res://PlataformaSobe.tscn" type="PackedScene" id=4]
 
 [node name="Mapa 1" type="Node"]
 
@@ -28,23 +29,24 @@ tile_data = IntArray( 196624, 536870916, 196625, 0, 196626, 0, 196627, 0, 196628
 [node name="PlataformaCai" type="Node" parent="."]
 
 editor/display_folded = true
+script/script = ExtResource( 2 )
 
-[node name="KinematicBody2D" parent="PlataformaCai" instance=ExtResource( 2 )]
+[node name="KinematicBody2D" parent="PlataformaCai" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 351.759, 348.727 )
 transform/scale = Vector2( 0.559976, 0.144067 )
 
-[node name="KinematicBody2D1" parent="PlataformaCai" instance=ExtResource( 2 )]
+[node name="KinematicBody2D1" parent="PlataformaCai" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 399.311, 348.187 )
 transform/scale = Vector2( 0.559976, 0.144067 )
 
-[node name="KinematicBody2D2" parent="PlataformaCai" instance=ExtResource( 2 )]
+[node name="KinematicBody2D2" parent="PlataformaCai" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 445.242, 348.187 )
 transform/scale = Vector2( 0.559976, 0.144067 )
 
-[node name="KinematicBody2D3" parent="PlataformaCai" instance=ExtResource( 2 )]
+[node name="KinematicBody2D3" parent="PlataformaCai" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 491.713, 348.106 )
 transform/scale = Vector2( 0.559976, 0.144067 )
@@ -53,37 +55,37 @@ transform/scale = Vector2( 0.559976, 0.144067 )
 
 editor/display_folded = true
 
-[node name="PlataformaSobe" parent="PlataformaSobe" instance=ExtResource( 3 )]
+[node name="PlataformaSobe" parent="PlataformaSobe" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 577.639, 338.46 )
 transform/scale = Vector2( 0.391384, 0.0596356 )
 
-[node name="PlataformaSobe1" parent="PlataformaSobe" instance=ExtResource( 3 )]
+[node name="PlataformaSobe1" parent="PlataformaSobe" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 822.423, 407.626 )
 transform/scale = Vector2( 0.391384, 0.0596356 )
 
-[node name="PlataformaSobe2" parent="PlataformaSobe" instance=ExtResource( 3 )]
+[node name="PlataformaSobe2" parent="PlataformaSobe" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 859.708, 348.187 )
 transform/scale = Vector2( 0.391384, 0.0596356 )
 
-[node name="PlataformaSobe3" parent="PlataformaSobe" instance=ExtResource( 3 )]
+[node name="PlataformaSobe3" parent="PlataformaSobe" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 905.639, 406.545 )
 transform/scale = Vector2( 0.391384, 0.0596356 )
 
-[node name="PlataformaSobe4" parent="PlataformaSobe" instance=ExtResource( 3 )]
+[node name="PlataformaSobe4" parent="PlataformaSobe" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 945.086, 348.187 )
 transform/scale = Vector2( 0.391384, 0.0596356 )
 
-[node name="PlataformaSobe5" parent="PlataformaSobe" instance=ExtResource( 3 )]
+[node name="PlataformaSobe5" parent="PlataformaSobe" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 982.37, 406.545 )
 transform/scale = Vector2( 0.391384, 0.0596356 )
 
-[node name="PlataformaSobe6" parent="PlataformaSobe" instance=ExtResource( 3 )]
+[node name="PlataformaSobe6" parent="PlataformaSobe" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1209.32, 534.071 )
 transform/scale = Vector2( 0.391384, 0.0596356 )

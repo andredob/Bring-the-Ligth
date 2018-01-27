@@ -26,7 +26,7 @@ animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "correndo",
-"speed": 6.0
+"speed": 0.0005
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
@@ -92,7 +92,9 @@ shadow/item_mask = 1
 transform/pos = Vector2( -0.540359, -5.40359 )
 transform/scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 3 )
-animation = "parada"
+animation = "correndo"
+frame = 3
+playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -112,5 +114,12 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( 0, 40 )
+layer_mask = 1
+type_mask = 13
 
 
