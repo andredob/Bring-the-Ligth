@@ -3,6 +3,8 @@ extends KinematicBody2D
 onready var ground_ray = get_node("RayCast2D")
 onready var sprite = get_node("AnimatedSprite")
 
+
+
 const ACCEL = 1500
 const MAX_SPEED = 500
 const FRICTION = -500
@@ -12,7 +14,7 @@ const JUMPS_PEED = -1000
 var acc = Vector2()
 var vel = Vector2(0,0)
 var anim = "parada"
-
+var pre_shoot = preload("res://Entities/Poder.tscn")
 
 
 func _ready():
@@ -35,6 +37,13 @@ func _fixed_process(delta):
 		get_node("SamplePlayer").play("footStepWoodsBit", false)
 		print("pula")
 		vel.y = JUMPS_PEED
+		
+	if Input.is_action_pressed("shoot"):
+		var tiro = pre_shoot.instance()
+		tiro.set_global_pos(get_global_pos())
+		get_parent().add_child(tiro)
+		pass
+		
 	vel += acc * delta
 	vel.x = clamp(vel.x, -MAX_SPEED, MAX_SPEED)
 	var motion = move(vel * delta)
