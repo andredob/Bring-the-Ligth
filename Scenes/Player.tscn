@@ -1,37 +1,52 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Script/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/normal.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 47.0375 )
+
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 10.0
-height = 60.319
 
 [node name="Player" type="KinematicBody2D"]
 
-transform/pos = Vector2( 34.4978, 31.8441 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, -16.1831, 9.69322 )
+shapes/0/transform = Matrix32( 0.87303, 0, 0, 0.99574, 0.101334, -7.22091 )
 shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1.94629, 0, 0, 1.90484, -0.0382252, -32.2023 )
+shapes/1/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
-transform/pos = Vector2( -16.1831, 9.69322 )
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
-
-[node name="normal" type="Sprite" parent="CollisionShape2D"]
+[node name="normal" type="Sprite" parent="."]
 
 transform/pos = Vector2( -0.625961, -8.69383 )
 transform/scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 0.101334, -7.22091 )
+transform/scale = Vector2( 0.87303, 0.99574 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -0.0382252, -32.2023 )
+transform/scale = Vector2( 1.94629, 1.90484 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 1
 
 

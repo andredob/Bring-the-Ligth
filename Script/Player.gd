@@ -107,7 +107,14 @@ func _fixed_process(delta):
 	if (jumping and velocity.y > 0):
 		# If falling, no longer jumping
 		jumping = false
+		
+	if(walk_left):
+		get_node("normal").set_flip_h(true);
+	if(walk_right):
+		get_node("normal").set_flip_h(false);
 	
+		
+		
 	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not prev_jump_pressed and not jumping):
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
@@ -116,7 +123,7 @@ func _fixed_process(delta):
 	
 	on_air_time += delta
 	prev_jump_pressed = jump
-
+	
 
 func _ready():
 	set_fixed_process(true)
