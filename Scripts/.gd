@@ -17,6 +17,7 @@ const WALK_MAX_SPEED = 300
 const STOP_FORCE = 3000
 const JUMP_SPEED = 350
 const JUMP_MAX_AIRBORNE_TIME = 0.5
+const SHOOT_DELAY = 20
 
 
 const SLIDE_STOP_VELOCITY = 1.0 # One pixel per second
@@ -35,6 +36,7 @@ var vida = 100
 var isLive = true
 var timerWalk = 0
 
+var shoot = SHOOT_DELAY
 
 func _input(ev):
    # Mouse in viewport coordinates
@@ -43,6 +45,7 @@ func _input(ev):
 
 
 func _fixed_process(delta):
+	shoot -= 1
 	# Create forces
 	var force = Vector2(0, GRAVITY)
 	
@@ -164,15 +167,16 @@ func _fixed_process(delta):
 	
 	on_air_time += delta
 	prev_jump_pressed = jump
-	
-	if Input.is_action_pressed("shoot"):
-		get_node("SamplePlayer").play("lightningBall", false)
-		var tiro = pre_shoot.instance()
-		var dire = get_global_mouse_pos() - get_global_pos()
-		dire  = dire.normalized()
-		tiro.dir = dire 
-		tiro.set_global_pos(get_global_pos())
-		get_parent().add_child(tiro)
+	if shoot <= 0:
+		if Input.is_action_pressed("shoot"):
+			get_node("SamplePlayer").play("lightningBall", false)
+			var tiro = pre_shoot.instance()
+			var dire = get_global_mouse_pos() - get_global_pos()
+			dire  = dire.normalized()
+			tiro.dir = dire 
+			tiro.set_global_pos(get_global_pos())
+			get_parent().add_child(tiro)
+			shoot = SHOOT_DELAY
 		
 		pass
 	
@@ -180,13 +184,21 @@ func _fixed_process(delta):
 		get_node("AnimationPlayer").play(nova_animacao)
 		animacao = nova_animacao
 
+ var cena
+
+
 
 func _ready():
+	var cena = get_tree().get_current_scene()
 	set_fixed_process(true)
 	get_node("SamplePlayer").play("BridgeAyahuasca", false)
 	
-func dano(dano):
-	vida-=dano
-	if vida <= 0:
-		isLive = false
-	pass
+func _on_Area2D_body_enter( body ):
+	if body.get_name() == "pinguin":
+		get_parent().dano(10)
+		print("bateu")
+	
+	pass # replace with function body
+
+
+
