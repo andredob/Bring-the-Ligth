@@ -118,7 +118,7 @@ autoplay = ""
 
 [node name="RayE" type="RayCast2D" parent="player"]
 
-transform/pos = Vector2( -60, 215 )
+transform/pos = Vector2( -62.7801, 238.957 )
 enabled = true
 cast_to = Vector2( 0, 5 )
 layer_mask = 2
@@ -126,7 +126,7 @@ type_mask = 15
 
 [node name="RayD" type="RayCast2D" parent="player"]
 
-transform/pos = Vector2( 60, 215 )
+transform/pos = Vector2( 65.8762, 238.99 )
 enabled = true
 cast_to = Vector2( 0, 5 )
 layer_mask = 2
