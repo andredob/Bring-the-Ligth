@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://Scenes/Tilset.tres" type="TileSet" id=1]
+[ext_resource path="res://Entities/player.tscn" type="PackedScene" id=2]
+
+[node name="Node" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="."]
+
+transform/scale = Vector2( 0.1, 0.1 )
+mode = 0
+tile_set = ExtResource( 1 )
+cell/size = Vector2( 360, 360 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( 131094, 1, 262142, 1, 262143, 1, 196630, 1, 327678, 1, 327679, 1, 262166, 1, 393214, 1, 393215, 1, 327702, 1, 458750, 1, 458751, 1, 393238, 1, 524286, 1, 524287, 1, 458774, 1, 589822, 1, 589823, 1, 524310, 1, 655358, 1, 655359, 1, 589846, 1, 720894, 1, 720895, 1, 655382, 1, 786430, 1, 786431, 1, 720918, 1, 720919, 1, 851967, 1, 786454, 1, 786455, 1, 917503, 1, 851990, 1, 851991, 1, 983039, 1, 917526, 1, 917527, 1, 1048575, 1, 983062, 1, 1114111, 1, 1048576, 1, 1048577, 1, 1048578, 1, 1048579, 1, 1048580, 1, 1048581, 1, 1048582, 1, 1048583, 1, 1048584, 1, 1048585, 1, 1048586, 1, 1048587, 1, 1048588, 1, 1048589, 1, 1048590, 1, 1048591, 1, 1048592, 1, 1048593, 1, 1048594, 1, 1048595, 1, 1048596, 1, 1048597, 1, 1048598, 1 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 324.833, 540.841 )
+transform/scale = Vector2( 0.1, 0.1 )
+
+
