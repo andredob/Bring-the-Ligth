@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=9 format=1]
 
-[ext_resource path="res://Sprites/BIXO2.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/BIXO4.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/BIXO1.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/BIXO4.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/BIXO2.png" type="Texture" id=3]
+[ext_resource path="res://Audio/pinguinRosnando.wav" type="Sample" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -69,6 +70,7 @@ func _fixed_process(delta):
 			
 		if(player.get_global_pos().x < get_global_pos().x):
 			print(\"Player à vista\")
+			get_node(\"SamplePlayer\").play(\"pinguinRosnando\")
 			movement = -40
 			
 		else:
@@ -106,7 +108,16 @@ tracks/0/keys = {
 "times": FloatArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 3 ) ]
+"values": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 1 ) ]
+}
+
+[sub_resource type="SampleLibrary" id=4]
+
+samples/pinguinRosnando = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
 }
 
 [node name="KinematicBody" type="KinematicBody2D"]
@@ -144,5 +155,22 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Walk"
+
+[node name="SamplePlayer" type="SamplePlayer" parent="."]
+
+config/polyphony = 1
+config/samples = SubResource( 4 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
 
 
