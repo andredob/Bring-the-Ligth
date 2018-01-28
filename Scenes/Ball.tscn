@@ -52,9 +52,9 @@ _update_shape_index = 0
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
-transform/pos = Vector2( 3.02598, -7.29883 )
+transform/pos = Vector2( -177.158, 63.2688 )
 transform/rot = -1.81266
-transform/scale = Vector2( 27.3597, 29.2355 )
+transform/scale = Vector2( 45.1459, 36.8587 )
 rect = Rect2( -10, -10, 20, 20 )
 
 [connection signal="enter_screen" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_enter_screen"]
