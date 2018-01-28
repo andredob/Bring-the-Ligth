@@ -1,13 +1,13 @@
 [gd_scene load_steps=20 format=1]
 
 [ext_resource path="res://Script/Player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/anda1.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/anda2.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/anda3.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/anda4.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/anda5.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/anda6.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/normal.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/normal.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/anda1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/anda2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/anda3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/anda4.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/anda5.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/anda6.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/luz.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/playerLife.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Audio/concreteStep.wav" type="Sample" id=11]
@@ -29,15 +29,15 @@ radius = 10.0
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "correndo",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "parada",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "correndo",
+"speed": 6.0
 } ]
 
 [sub_resource type="SampleLibrary" id=4]
@@ -113,7 +113,7 @@ _update_shape_index = 1
 
 [node name="Light2D" type="Light2D" parent="."]
 
-transform/pos = Vector2( 166.948, 393 )
+transform/pos = Vector2( 168.455, 393 )
 enabled = true
 editor_only = false
 texture = ExtResource( 9 )
@@ -155,10 +155,10 @@ drag_margin/bottom = 0.2
 
 [node name="Life" parent="Camera2D" instance=ExtResource( 10 )]
 
-margin/left = -192.0
-margin/top = -94.0
-margin/right = 190.0
-margin/bottom = -78.0
+margin/left = -183.0
+margin/top = 296.0
+margin/right = 199.0
+margin/bottom = 317.0
 range/value = 15.0
 
 [node name="peD" type="RayCast2D" parent="."]
