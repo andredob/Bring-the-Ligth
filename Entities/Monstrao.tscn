@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Entities/Monstrao.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/BIXO2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/fantasma.png" type="Texture" id=2]
 
 [sub_resource type="ConcavePolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
-segments = Vector2Array( -6.23188, -6.45902, 1.18841, -6.45902, 1.18841, -6.45902, 6.63768, -6.32787, 6.63768, -6.32787, 6.98551, 7.57377, 6.98551, 7.57377, 6.98551, 8.7541, 6.98551, 8.7541, -6.23188, 9.67213, -6.23188, 9.67213, -7.3913, 8.62295, -7.3913, 8.62295, -6.23188, -6.45902 )
+segments = Vector2Array( -6.399, -22.4121, -10.9556, -18.5942, -10.9556, -18.5942, -14.6262, -19.2305, -14.6262, -19.2305, -14.9584, -26.018, -14.9584, -26.018, -15.9552, -25.1696, -15.9552, -25.1696, -21.287, -17.5033, -21.287, -17.5033, -22.7268, -15.8065, -22.7268, -15.8065, -22.9483, -11.5643, -22.9483, -11.5643, -23.6128, -7.50394, -23.6128, -7.50394, -21.287, -0.292242, -21.287, -0.292242, -20.5118, 5.46499, -20.5118, 5.46499, -17.838, 6.31343, -17.838, 6.31343, -17.3949, 2.91969, -17.3949, 2.91969, -14.7369, 3.76812, -14.7369, 3.76812, -12.9491, 3.55602, -12.9491, 3.55602, -13.2814, 5.25288, -13.2814, 5.25288, -11.8416, 3.98023, -11.8416, 3.98023, -12.0631, 6.10132, -12.0631, 6.10132, -10.6233, 5.6771, -10.6233, 5.6771, -10.4018, 7.58608, -10.4018, 7.58608, -8.28176, 2.91969, -8.28176, 2.91969, -4.16816, 0.344084, -4.16816, 0.344084, -1.73165, -6.6555, -1.73165, -6.6555, -1.73165, -11.3522, -1.73165, -11.3522, -4.05741, -9.019, -4.05741, -9.019, -8.28176, -13.4733, -8.28176, -13.4733, -5.956, -18.17, -5.956, -18.17, -5.40224, -20.9274, -5.40224, -20.9274, -6.399, -22.4121 )
 
 [sub_resource type="GDScript" id=1]
 
@@ -14,10 +14,11 @@ script/source = ""
 
 [node name="Monstrao" type="RigidBody2D"]
 
-transform/pos = Vector2( 23, -41 )
+transform/pos = Vector2( -368.5, -114.5 )
+transform/scale = Vector2( -7.32813, 4.32812 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 8.625, 0, 0, 7.625, -22.25, -11.75 )
+shapes/0/transform = Matrix32( 8.625, 0, 0, 7.625, 245.697, -34.4619 )
 shapes/0/trigger = false
 collision/layers = 4
 collision/mask = 3
@@ -40,28 +41,37 @@ script/script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( -117, -114 )
-transform/scale = Vector2( 0.406256, 0.37 )
+transform/pos = Vector2( 101.458, -99.1551 )
+transform/scale = Vector2( 0.320955, 0.37 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
-transform/pos = Vector2( -22.25, -11.75 )
+transform/pos = Vector2( 245.697, -34.4619 )
 transform/scale = Vector2( 8.625, 7.625 )
 build_mode = 1
-polygon = Vector2Array( -6.23188, -6.45902, 1.18841, -6.45902, 6.63768, -6.32787, 6.98551, 7.57377, 6.98551, 8.7541, -6.23188, 9.67213, -7.3913, 8.62295 )
+polygon = Vector2Array( -6.399, -22.4121, -10.9556, -18.5942, -14.6262, -19.2305, -14.9584, -26.018, -15.9552, -25.1696, -21.287, -17.5033, -22.7268, -15.8065, -22.9483, -11.5643, -23.6128, -7.50394, -21.287, -0.292242, -20.5118, 5.46499, -17.838, 6.31343, -17.3949, 2.91969, -14.7369, 3.76812, -12.9491, 3.55602, -13.2814, 5.25288, -11.8416, 3.98023, -12.0631, 6.10132, -10.6233, 5.6771, -10.4018, 7.58608, -8.28176, 2.91969, -4.16816, 0.344084, -1.73165, -6.6555, -1.73165, -11.3522, -4.05741, -9.019, -8.28176, -13.4733, -5.956, -18.17, -5.40224, -20.9274 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
-transform/pos = Vector2( -206, -264 )
-transform/scale = Vector2( 41.8875, 2.2 )
+transform/pos = Vector2( 98.8657, -463.365 )
+transform/scale = Vector2( 44.3224, 3.94639 )
 rect = Rect2( -10, -10, 20, 20 )
 script/script = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 [connection signal="enter_screen" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_enter_screen"]
 
 [connection signal="exit_screen" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_exit_screen"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 
