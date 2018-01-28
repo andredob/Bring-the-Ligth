@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=1]
+[gd_scene load_steps=27 format=1]
 
 [ext_resource path="res://Scripts/.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Pula3.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Entities/Monstrao.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Entities/Fantasma.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Entities/Leecher.tscn" type="PackedScene" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -344,6 +345,10 @@ transform/pos = Vector2( 6390.04, -352.973 )
 [node name="Fantasma1" parent="." instance=ExtResource( 21 )]
 
 transform/pos = Vector2( 4466.09, 853.766 )
+
+[node name="KinematicBody 2" parent="." instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 2019.75, 568.306 )
 
 
 [editable path="KinematicBody2D"]
