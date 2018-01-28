@@ -70,14 +70,20 @@ func _fixed_process(delta):
 		if(player.get_global_pos().x < get_global_pos().x):
 			print(\"Player à vista\")
 			movement = -40
+			
 		else:
 			movement = 40
+			
 	else:
 		distPercorrida -= 1
 		if(distPercorrida == 0):
 			movement *= -1
 			print(movement)
 			distPercorrida = 200
+	if(movement >= 0):
+		get_node(\"Sprite\").set_flip_h(false)
+	else:
+		get_node(\"Sprite\").set_flip_h(true)
 
 
 
