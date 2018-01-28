@@ -1,0 +1,122 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Sprites/charTest.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 7.0
+height = 22.0
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends KinematicBody2D
+# Laws of Physics
+const GRAVITY = Vector2(0, 0)
+# movementx Constants
+const FLOOR_NORMAL = Vector2(0, -1)
+const SLOPE_FRICTION = 0
+const movementx_SPEED = 1
+const movementy_SPEED = 1
+const ACCELERATION = 0.8
+const SHOOT_DELAY = 5
+
+
+
+# Player Variables
+var velocity = Vector2()
+var distPercorridax = 30
+var distPercorriday = 30
+var movementx = 40
+var movementy = 40
+var distance2Hero = 1000
+var viewRange = 350
+var shootTime = SHOOT_DELAY
+onready var player = get_parent().get_node(\"player\")
+var shootPrefab = preload(\"res://Entities/EnergyCell.tscn\")
+ 
+# Start
+func _ready():
+	randomize()
+	set_fixed_process(true)
+	pass
+ 
+# Processing
+func _fixed_process(delta):
+	var distance2Player = get_global_pos().distance_to(player.get_global_pos());
+	
+	# Add Gravity
+	velocity += GRAVITY * delta
+	# Move and Slide
+	velocity = move_and_slide(velocity, FLOOR_NORMAL, SLOPE_FRICTION)
+	# movementx
+
+	# Set movementx speed
+	movementx *= movementx_SPEED
+	movementy *= movementy_SPEED
+	# Change horizontal velocity
+	velocity.x = lerp(velocity.x, movementx, ACCELERATION)
+	velocity.y = lerp(velocity.y, movementy, ACCELERATION)
+	
+	#Verifica se o player está proximo
+	if(distance2Player < viewRange):
+		if(player.get_global_pos().x < get_global_pos().x):
+			movementx = -40
+		else:
+			movementx = 40
+		if(player.get_global_pos().y < get_global_pos().y):
+			movementy = -40
+		else:
+			movementy = 40
+	else:
+		distPercorridax -= 1
+		if(distPercorridax == 0):
+			movementx *= -1
+			
+			randomize(1)
+			var random = randi()%201+1
+
+			distPercorridax = random
+		
+		distPercorriday -= 1
+		if(distPercorriday == 0):
+			movementy *= -1
+			
+			randomize(5)
+			var random = randi()%201+1
+			
+			distPercorriday = random
+
+
+
+	
+
+	
+     "
+
+[node name="Fantasma" type="KinematicBody2D"]
+
+transform/pos = Vector2( 0, -8 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -1, -10 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, -10 )
+transform/scale = Vector2( 2.3125, 2.3125 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -1, -10 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+
