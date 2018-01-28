@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=1]
+[gd_scene load_steps=24 format=1]
 
 [ext_resource path="res://Scripts/.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Pula3.png" type="Texture" id=2]
@@ -11,13 +11,14 @@
 [ext_resource path="res://Sprites/normal.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Pula1.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Pula2.png" type="Texture" id=11]
-[ext_resource path="res://Scenes/Tilset.tres" type="TileSet" id=12]
-[ext_resource path="res://Sprites/ff.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/ff2.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/ff3.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/nevOA.png" type="Texture" id=16]
-[ext_resource path="res://Entities/PlataformaSobe.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Entities/plataformaCai.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Sprites/luz.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Tilset.tres" type="TileSet" id=13]
+[ext_resource path="res://Sprites/ff.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/ff2.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/ff3.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/nevOA.png" type="Texture" id=17]
+[ext_resource path="res://Entities/PlataformaSobe.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Entities/plataformaCai.tscn" type="PackedScene" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -150,12 +151,35 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
+[node name="Light2D" type="Light2D" parent="player"]
+
+transform/pos = Vector2( 139.86, 692.614 )
+enabled = true
+editor_only = false
+texture = ExtResource( 12 )
+offset = Vector2( 0, 0 )
+scale = 10.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 3
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
 [node name="TileMap" type="TileMap" parent="."]
 
 transform/pos = Vector2( 266, 467 )
 transform/scale = Vector2( 0.1, 0.1 )
 mode = 0
-tile_set = ExtResource( 12 )
+tile_set = ExtResource( 13 )
 cell/size = Vector2( 360, 360 )
 cell/quadrant_size = 16
 cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -172,6 +196,7 @@ tile_data = IntArray( -1900381, 0, -1900380, 0, -1900379, 0, -1900378, 0, -19003
 
 [node name="Parallax" type="ParallaxBackground" parent="."]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -194,7 +219,7 @@ motion/mirroring = Vector2( 1122, 0 )
 
 transform/pos = Vector2( 414, 332 )
 transform/scale = Vector2( 0.748, 0.744 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
 [node name="Layer1" type="ParallaxLayer" parent="Parallax"]
 
@@ -207,7 +232,7 @@ motion/mirroring = Vector2( 1122, 0 )
 
 transform/pos = Vector2( 414, 332 )
 transform/scale = Vector2( 0.748, 0.744 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 
 [node name="Layer2" type="ParallaxLayer" parent="Parallax"]
 
@@ -220,10 +245,11 @@ motion/mirroring = Vector2( 1122, 0 )
 
 transform/pos = Vector2( 414, 332 )
 transform/scale = Vector2( 0.748, 0.744 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="Parallax1" type="ParallaxBackground" parent="."]
 
+editor/display_folded = true
 layer = 0
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -237,6 +263,7 @@ scroll/ignore_camera_zoom = false
 
 [node name="Layer" type="ParallaxLayer" parent="Parallax1"]
 
+editor/display_folded = true
 transform/pos = Vector2( -344, -112 )
 motion/scale = Vector2( 0, 0 )
 motion/offset = Vector2( 0, 0 )
@@ -244,99 +271,99 @@ motion/mirroring = Vector2( 0, 0 )
 
 [node name="nevOA" type="Sprite" parent="Parallax1/Layer"]
 
-transform/pos = Vector2( 477, 202 )
-texture = ExtResource( 16 )
+transform/pos = Vector2( 532.083, 203.796 )
+texture = ExtResource( 17 )
 
-[node name="PlataformaSobe" parent="." instance=ExtResource( 17 )]
+[node name="PlataformaSobe" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 2345, 541 )
 
-[node name="PlataformaSobe3" parent="." instance=ExtResource( 17 )]
+[node name="PlataformaSobe3" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 4668, 1052 )
 transform/scale = Vector2( 0.4, 0.227331 )
 
-[node name="PlataformaSobe4" parent="." instance=ExtResource( 17 )]
+[node name="PlataformaSobe4" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 4582, 1238 )
 transform/scale = Vector2( 0.4, 0.227331 )
 
-[node name="PlataformaSobe5" parent="." instance=ExtResource( 17 )]
+[node name="PlataformaSobe5" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 4664, 1416 )
 transform/scale = Vector2( 0.4, 0.227331 )
 
-[node name="PlataformaSobe2" parent="." instance=ExtResource( 17 )]
+[node name="PlataformaSobe2" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 5940, 102 )
 
-[node name="PlataformaSobe1" parent="." instance=ExtResource( 17 )]
+[node name="PlataformaSobe1" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 4406, 639 )
 
-[node name="PlataformaCai" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 2742, 906 )
 transform/scale = Vector2( 1.72769, 0.643082 )
 
-[node name="PlataformaCai1" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai1" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 3330, 906 )
 transform/scale = Vector2( 1.72769, 0.643082 )
 
-[node name="PlataformaCai 2" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai 2" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 5231, 538 )
 
-[node name="PlataformaCai3" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai3" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 5308, 440 )
 
-[node name="PlataformaCai4" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai4" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 5231, 336 )
 
-[node name="PlataformaCai5" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai5" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 5308, 241 )
 
-[node name="PlataformaCai6" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai6" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 5646, 622 )
 
-[node name="PlataformaCai7" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai7" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 6042, 620 )
 
-[node name="PlataformaCai8" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai8" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 6261, 619 )
 
-[node name="PlataformaCai9" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai9" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 5690, 366 )
 
-[node name="PlataformaCai10" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai10" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 5767, 162 )
 
-[node name="PlataformaCai11" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai11" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 5822, -14 )
 
-[node name="PlataformaCai12" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai12" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 5741, -123 )
 
-[node name="PlataformaCai13" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai13" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 6385, -219 )
 
-[node name="PlataformaCai14" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai14" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 4810, 1423 )
 
-[node name="PlataformaCai15" parent="." instance=ExtResource( 18 )]
+[node name="PlataformaCai15" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 4494, 1485 )
 
