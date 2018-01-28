@@ -61,6 +61,7 @@ func _fixed_process(delta):
 		if(shootTime <= 0):
 			var m = shootPrefab.instance()
 			m.set_pos(get_pos())
+			m.target = player
 			get_parent().add_child(m)
 			shootTime = SHOOT_DELAY
 			
@@ -72,16 +73,9 @@ func _fixed_process(delta):
 		distPercorrida -= 1
 		if(distPercorrida == 0):
 			movement *= -1
-			distPercorrida = 200
+			distPercorrida = 200"
 
-
-
-	
-
-	
-     "
-
-[node name="KinematicBody" type="KinematicBody2D"]
+[node name="SadBoy" type="KinematicBody2D"]
 
 transform/pos = Vector2( 0, -8 )
 input/pickable = false
