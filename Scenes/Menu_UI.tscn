@@ -8,9 +8,14 @@
 [ext_resource path="res://Sprites/UI/B_Back.tex" type="Texture" id=6]
 [ext_resource path="res://Sprites/UI/W_Back.tex" type="Texture" id=7]
 
-[sub_resource type="ShortCut" id=2]
+[sub_resource type="ShortCut" id=1]
 
 shortcut = InputEvent(NONE)
+
+[sub_resource type="AtlasTexture" id=2]
+
+region = Rect2( 0, 0, 0, 0 )
+margin = Rect2( 0, 0, 0, 0 )
 
 [sub_resource type="AtlasTexture" id=3]
 
@@ -18,11 +23,6 @@ region = Rect2( 0, 0, 0, 0 )
 margin = Rect2( 0, 0, 0, 0 )
 
 [sub_resource type="AtlasTexture" id=4]
-
-region = Rect2( 0, 0, 0, 0 )
-margin = Rect2( 0, 0, 0, 0 )
-
-[sub_resource type="AtlasTexture" id=5]
 
 region = Rect2( 0, 0, 0, 0 )
 margin = Rect2( 0, 0, 0, 0 )
@@ -103,8 +103,8 @@ margin/right = 312.0
 margin/bottom = 570.0
 toggle_mode = false
 enabled_focus_mode = 2
-shortcut = SubResource( 2 )
-textures/normal = SubResource( 3 )
+shortcut = SubResource( 1 )
+textures/normal = SubResource( 2 )
 textures/hover = ExtResource( 3 )
 params/resize_mode = 0
 params/scale = Vector2( 0.7, 0.7 )
@@ -124,7 +124,7 @@ margin/bottom = 92.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = SubResource( 4 )
+textures/normal = SubResource( 3 )
 textures/hover = ExtResource( 4 )
 params/resize_mode = 0
 params/scale = Vector2( 0.7, 0.7 )
@@ -144,7 +144,7 @@ margin/bottom = 256.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = SubResource( 5 )
+textures/normal = SubResource( 4 )
 textures/hover = ExtResource( 5 )
 params/resize_mode = 0
 params/scale = Vector2( 0.7, 0.7 )

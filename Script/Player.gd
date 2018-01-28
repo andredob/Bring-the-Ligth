@@ -17,7 +17,7 @@ var vel = Vector2(0,0)
 var anim = "parada"
 var pre_shoot = preload("res://Entities/Poder.tscn")
 var mouse_pos
-var life = 100
+var life = 15
 
 func _ready():
 	get_node("SamplePlayer").play("energyShield", false)
@@ -39,7 +39,7 @@ func takeDamage():
 
 
 func _fixed_process(delta):
-	get_node("Life").set_value(life)
+	get_node("Camera2D/Life").set_value(life)
 	acc.y = GRAVITY
 	acc.x = Input.is_action_pressed("direita") - Input.is_action_pressed("esquerda")
 	

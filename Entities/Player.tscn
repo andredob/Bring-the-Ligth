@@ -153,6 +153,14 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
+[node name="Life" parent="Camera2D" instance=ExtResource( 10 )]
+
+margin/left = -192.0
+margin/top = -94.0
+margin/right = 190.0
+margin/bottom = -78.0
+range/value = 15.0
+
 [node name="peD" type="RayCast2D" parent="."]
 
 transform/pos = Vector2( -9, 43 )
@@ -168,14 +176,6 @@ enabled = true
 cast_to = Vector2( 0, 1 )
 layer_mask = 1
 type_mask = 13
-
-[node name="Life" parent="." instance=ExtResource( 10 )]
-
-margin/left = -193.0
-margin/top = 293.0
-margin/right = 189.0
-margin/bottom = 309.0
-range/value = 15.0
 
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 
