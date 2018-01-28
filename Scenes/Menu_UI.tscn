@@ -459,9 +459,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 128.0
-margin/top = 294.0
+margin/top = 374.0
 margin/right = 289.0
-margin/bottom = 427.0
+margin/bottom = 507.0
 text = "André Dobermann           
 Michael Vivaldini				
 Daniel Quevedo
@@ -499,9 +499,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 558.0
-margin/top = 294.0
+margin/top = 374.0
 margin/right = 661.0
-margin/bottom = 342.0
+margin/bottom = 422.0
 text = "Gustavo P. Lima	
 Isabella Bottini"
 percent_visible = 1.0
@@ -515,9 +515,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 359.0
-margin/top = 426.0
-margin/right = 399.0
-margin/bottom = 440.0
+margin/top = 506.0
+margin/right = 459.0
+margin/bottom = 520.0
 text = "	Felipe de Souza"
 percent_visible = 1.0
 lines_skipped = 0
@@ -546,9 +546,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 126.0
-margin/top = 265.0
-margin/right = 394.0
-margin/bottom = 279.0
+margin/top = 345.0
+margin/right = 405.0
+margin/bottom = 359.0
 text = "| Programming and General Development |"
 percent_visible = 1.0
 lines_skipped = 0
@@ -561,9 +561,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 555.0
-margin/top = 265.0
+margin/top = 345.0
 margin/right = 663.0
-margin/bottom = 279.0
+margin/bottom = 359.0
 text = "| Visual Design |"
 percent_visible = 1.0
 lines_skipped = 0
@@ -576,9 +576,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 358.0
-margin/top = 397.0
+margin/top = 477.0
 margin/right = 483.0
-margin/bottom = 411.0
+margin/bottom = 491.0
 text = "| Music Effects |"
 percent_visible = 1.0
 lines_skipped = 0
@@ -597,6 +597,26 @@ margin/right = 1138.0
 margin/bottom = 514.0
 texture = ExtResource( 10 )
 stretch_mode = 0
+
+[node name="Descricao" type="Label" parent="CreditsUI"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 85.0
+margin/top = 214.0
+margin/right = 736.0
+margin/bottom = 313.0
+text = "	The world was covered by a dense darkness that brought death to the living, 
+cold where there was heat and darkness where there was light. 
+	After living for years covered in darkness, the world can finally be released,
+thanks to Dora, a girl strong enough to scare away the darkness by Transmitting light to the world. 
+
+In Bring the Light you will control Dora, fighting the forces of darkness to bring light back to the world."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="pressed" from="Main Menu/VBoxContainer/MENU_Fixed/Bt_startGame" to="." method="_on_Bt_newGame_pressed"]
 
