@@ -42,6 +42,7 @@ func _input(ev):
 
 
 func _fixed_process(delta):
+	
 	# Create forces
 	var force = Vector2(0, GRAVITY)
 	
@@ -160,7 +161,7 @@ func _fixed_process(delta):
 		tiro.dir = dire 
 		tiro.set_global_pos(get_global_pos())
 		get_parent().add_child(tiro)
-		
+		nova_animacao = "ataca"
 		pass
 	
 	if animacao != nova_animacao:
@@ -171,8 +172,4 @@ func _fixed_process(delta):
 func _ready():
 	set_fixed_process(true)
 	
-func dano(dano):
-	vida-=dano
-	if vida <= 0:
-		isLive = false
-	pass
+
