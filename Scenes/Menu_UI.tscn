@@ -83,7 +83,6 @@ autoplay = "animacaoTransparencia"
 
 [node name="ColorFrame" type="ColorFrame" parent="."]
 
-visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -96,7 +95,6 @@ color = Color( 0.0352941, 0.0470588, 0.0862745, 1 )
 
 [node name="Main Menu" type="MarginContainer" parent="."]
 
-visibility/visible = false
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
@@ -216,8 +214,8 @@ size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 1280.0
-margin/bottom = 720.0
+margin/right = 800.0
+margin/bottom = 600.0
 custom_constants/margin_top = 40
 custom_constants/margin_left = 40
 
@@ -229,8 +227,8 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 40.0
 margin/top = 40.0
-margin/right = 1280.0
-margin/bottom = 720.0
+margin/right = 800.0
+margin/bottom = 600.0
 custom_constants/separation = 50
 alignment = 0
 
@@ -242,7 +240,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 1240.0
+margin/right = 760.0
 margin/bottom = 16.0
 alignment = 0
 
@@ -291,7 +289,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 66.0
-margin/right = 1240.0
+margin/right = 760.0
 margin/bottom = 82.0
 alignment = 0
 
@@ -340,7 +338,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 132.0
-margin/right = 1240.0
+margin/right = 760.0
 margin/bottom = 183.0
 toggle_mode = false
 enabled_focus_mode = 2
@@ -520,7 +518,7 @@ margin/left = 359.0
 margin/top = 426.0
 margin/right = 399.0
 margin/bottom = 440.0
-text = "	Felipe"
+text = "	Felipe de Souza"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -551,7 +549,7 @@ margin/left = 126.0
 margin/top = 265.0
 margin/right = 394.0
 margin/bottom = 279.0
-text = "| Programação e Desenvolvimento Geral |"
+text = "| Programming and General Development |"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -564,9 +562,9 @@ size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 555.0
 margin/top = 265.0
-margin/right = 641.0
+margin/right = 663.0
 margin/bottom = 279.0
-text = "| Design Visual |"
+text = "| Visual Design |"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -581,7 +579,7 @@ margin/left = 358.0
 margin/top = 397.0
 margin/right = 483.0
 margin/bottom = 411.0
-text = "| Efeitos Musicais |"
+text = "| Music Effects |"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
