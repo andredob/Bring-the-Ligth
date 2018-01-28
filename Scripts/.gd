@@ -33,6 +33,7 @@ var mouse_pos
 var pre_shoot = preload("res://Entities/Poder.tscn")
 var vida = 100
 var isLive = true
+var timerWalk = 0
 
 
 func _input(ev):
@@ -48,7 +49,13 @@ func _fixed_process(delta):
 	var walk_left = Input.is_action_pressed("esquerda")
 	var walk_right = Input.is_action_pressed("direita")
 	var jump = Input.is_action_pressed("pulo")
-	
+		
+	#variavel que permite reproduzir o som de passo em um determinado tempo
+	timerWalk = timerWalk+delta
+	if timerWalk > 0.8:
+		timerWalk = 0
+		pass
+		
 	var stop = true
 	
 	if (walk_left):
@@ -67,7 +74,11 @@ func _fixed_process(delta):
 	
 	if andando:
 		
-		if velocity.x > 0 :
+		if (timerWalk > 0.7 and chao):
+			get_node("WalkPlayer").play("walk", false)
+			pass
+			
+		if (velocity.x > 0):
 			get_node("Sprite").set_flip_h(false)
 		else :
 			get_node("Sprite").set_flip_h(true)
@@ -147,6 +158,7 @@ func _fixed_process(delta):
 	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not prev_jump_pressed and not jumping):
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
+		get_node("SamplePlayer").play("jump8bits", false)
 		velocity.y = -JUMP_SPEED
 		jumping = true
 	
@@ -154,6 +166,7 @@ func _fixed_process(delta):
 	prev_jump_pressed = jump
 	
 	if Input.is_action_pressed("shoot"):
+		get_node("SamplePlayer").play("lightningBall", false)
 		var tiro = pre_shoot.instance()
 		var dire = get_global_mouse_pos() - get_global_pos()
 		dire  = dire.normalized()
@@ -170,6 +183,7 @@ func _fixed_process(delta):
 
 func _ready():
 	set_fixed_process(true)
+	get_node("SamplePlayer").play("BridgeAyahuasca", false)
 	
 func dano(dano):
 	vida-=dano
