@@ -29,7 +29,7 @@ var movement = 40
 var distance2Hero = 1000
 var viewRange = 150
 var shootTime = SHOOT_DELAY
-onready var player = get_parent().get_node(\"Player\")
+onready var player = get_parent().get_node(\"player\")
 var shootPrefab = preload(\"res://Entities/Missile.tscn\")
  
 # Start

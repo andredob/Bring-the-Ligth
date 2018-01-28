@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=1]
+[gd_scene load_steps=27 format=1]
 
 [ext_resource path="res://Scripts/.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Pula3.png" type="Texture" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://Entities/plataformaCai.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Entities/Monstrao.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Entities/Fantasma.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Entities/Leecher.tscn" type="PackedScene" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -82,7 +84,7 @@ tracks/0/keys = {
 [node name="player" type="KinematicBody2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( -18, 268 )
+transform/pos = Vector2( 1544.46, 344.792 )
 transform/scale = Vector2( 0.2, 0.2 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -329,12 +331,24 @@ transform/pos = Vector2( 4494, 1485 )
 
 [node name="Monstrao" parent="." instance=ExtResource( 19 )]
 
-transform/pos = Vector2( 2195, 84 )
+transform/pos = Vector2( 1856.28, 329.153 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 20 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 1552, 356 )
+
+[node name="Fantasma" parent="." instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 6390.04, -352.973 )
+
+[node name="Fantasma1" parent="." instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 4466.09, 853.766 )
+
+[node name="KinematicBody 2" parent="." instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 2019.75, 568.306 )
 
 
 [editable path="KinematicBody2D"]
