@@ -15,7 +15,7 @@ func _ready():
 	pauseMenu = self.get_node("Pause_UI");
 	pauseMenu.hide();
 	
-	get_node("SamplePlayer").play("IntroAyahuasca", false)
+	get_node("SamplePlayer").play("BridgeAyahuasca", false)
 	
 	
 	set_process_input(true);
