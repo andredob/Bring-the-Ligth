@@ -31,6 +31,9 @@ var nova_animacao
 var animacao
 var mouse_pos
 var pre_shoot = preload("res://Entities/Poder.tscn")
+var vida = 100
+var isLive = true
+
 
 func _input(ev):
    # Mouse in viewport coordinates
@@ -167,3 +170,9 @@ func _fixed_process(delta):
 
 func _ready():
 	set_fixed_process(true)
+	
+func dano(dano):
+	vida-=dano
+	if vida <= 0:
+		isLive = false
+	pass
