@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://Scenes/PlataformaDesce.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/PlataformaDesce.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/tile1.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -24,7 +24,6 @@ texture = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
 
-transform/scale = Vector2( 1, 1 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
