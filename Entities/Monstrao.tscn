@@ -57,7 +57,7 @@ trigger = false
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
-transform/pos = Vector2( -183, -299 )
+transform/pos = Vector2( -180.48, -353.306 )
 transform/scale = Vector2( 41.8875, 2.2 )
 rect = Rect2( -10, -10, 20, 20 )
 script/script = SubResource( 2 )
