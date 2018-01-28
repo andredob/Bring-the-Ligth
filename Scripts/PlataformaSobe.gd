@@ -32,5 +32,5 @@ func _fixed_process(delta):
 		
 	if(get_pos().y>=(init_pos.y)&&subir==false):
 		subir = true
-		print("vamos subir")
+		#print("vamos subir")
 		vel = 0.5

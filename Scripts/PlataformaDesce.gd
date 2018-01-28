@@ -23,17 +23,17 @@ func _fixed_process(delta):
 		
 	if(subir==false):
 		translate(Vector2(0,1)*veld*delta)
-		print("joao")
+		#print("joao")
 		veld += num
 		
 	if(get_pos().y>=(init_pos.y)+altura && subir==false):
-		print("oi")
+		#print("oi")
 		subir =true
 		veld= 0.5
 		
 		
 	if(get_pos().y<=(init_pos.y)&&subir==true):
 		subir = false
-		print("vamos subir")
+		#print("vamos subir")
 		vel = 0.5
 	

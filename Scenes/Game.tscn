@@ -1,16 +1,16 @@
-[gd_scene load_steps=24 format=1]
+[gd_scene load_steps=25 format=1]
 
 [ext_resource path="res://Scripts/.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/normal.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Pula3.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/anda1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/anda2.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/anda3.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/anda4.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/anda5.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/anda6.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Pula1.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Pula2.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Pula3.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/normal.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Pula1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Pula2.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Tilset.tres" type="TileSet" id=12]
 [ext_resource path="res://Sprites/ff.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/ff2.png" type="Texture" id=14]
@@ -18,12 +18,13 @@
 [ext_resource path="res://Sprites/nevOA.png" type="Texture" id=16]
 [ext_resource path="res://Entities/PlataformaSobe.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Entities/plataformaCai.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Entities/Monstrao.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 64.416, 224.632 )
+extents = Vector2( 64.416, 211.752 )
 
 [sub_resource type="Animation" id=2]
 
@@ -56,7 +57,7 @@ tracks/0/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -73,18 +74,19 @@ tracks/0/keys = {
 "times": FloatArray( 0, 0.1, 0.2 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ]
+"values": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 2 ) ]
 }
 
 [node name="Game" type="Node"]
 
 [node name="player" type="KinematicBody2D" parent="."]
 
-transform/pos = Vector2( -32, 266 )
+editor/display_folded = true
+transform/pos = Vector2( -18, 268 )
 transform/scale = Vector2( 0.2, 0.2 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.54654, 14.4316 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.583977, 1.75194 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -98,7 +100,7 @@ texture = ExtResource( 2 )
 
 [node name="shape" type="CollisionShape2D" parent="player"]
 
-transform/pos = Vector2( 1.54654, 14.4316 )
+transform/pos = Vector2( 0.583977, 1.75194 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -118,7 +120,7 @@ autoplay = ""
 
 [node name="RayE" type="RayCast2D" parent="player"]
 
-transform/pos = Vector2( -62.7801, 238.957 )
+transform/pos = Vector2( -60, 215 )
 enabled = true
 cast_to = Vector2( 0, 5 )
 layer_mask = 2
@@ -126,7 +128,7 @@ type_mask = 15
 
 [node name="RayD" type="RayCast2D" parent="player"]
 
-transform/pos = Vector2( 65.8762, 238.99 )
+transform/pos = Vector2( 60, 215 )
 enabled = true
 cast_to = Vector2( 0, 5 )
 layer_mask = 2
@@ -173,6 +175,7 @@ tile_data = IntArray( -1900381, 0, -1900380, 0, -1900379, 0, -1900378, 0, -19003
 
 [node name="Parallax" type="ParallaxBackground" parent="."]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -186,7 +189,8 @@ scroll/ignore_camera_zoom = false
 
 [node name="Layer" type="ParallaxLayer" parent="Parallax"]
 
-motion/scale = Vector2( 0.2, 0 )
+editor/display_folded = true
+motion/scale = Vector2( 0.5, 0 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1122, 0 )
 
@@ -198,7 +202,8 @@ texture = ExtResource( 13 )
 
 [node name="Layer1" type="ParallaxLayer" parent="Parallax"]
 
-motion/scale = Vector2( 0.5, 0 )
+editor/display_folded = true
+motion/scale = Vector2( 0.7, 0 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1122, 0 )
 
@@ -223,6 +228,7 @@ texture = ExtResource( 15 )
 
 [node name="Parallax1" type="ParallaxBackground" parent="."]
 
+editor/display_folded = true
 layer = 0
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -339,10 +345,14 @@ transform/pos = Vector2( 4810, 1423 )
 
 transform/pos = Vector2( 4494, 1485 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 19 )]
+[node name="Monstrao" parent="." instance=ExtResource( 19 )]
 
-transform/pos = Vector2( 1547.84, 360.323 )
-collision/layers = 6
+transform/pos = Vector2( 2195, 84 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 20 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 1552, 356 )
 
 
 [editable path="KinematicBody2D"]

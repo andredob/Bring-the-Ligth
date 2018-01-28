@@ -64,7 +64,6 @@ autostart = false
 
 [node name="Sensor" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 2.7151, 7.77506 )
 transform/scale = Vector2( 1.10301, 0.728912 )
 input/pickable = true
