@@ -1,16 +1,16 @@
 [gd_scene load_steps=24 format=1]
 
 [ext_resource path="res://Scripts/.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Pula3.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/normal.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/anda1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/anda2.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/anda3.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/anda4.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/anda5.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/anda6.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/normal.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Pula1.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Pula2.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Pula1.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Pula2.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Pula3.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Tilset.tres" type="TileSet" id=12]
 [ext_resource path="res://Sprites/ff.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/ff2.png" type="Texture" id=14]
@@ -23,7 +23,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 64.416, 211.752 )
+extents = Vector2( 64.416, 224.632 )
 
 [sub_resource type="Animation" id=2]
 
@@ -56,7 +56,7 @@ tracks/0/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -73,19 +73,18 @@ tracks/0/keys = {
 "times": FloatArray( 0, 0.1, 0.2 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 2 ) ]
+"values": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ]
 }
 
 [node name="Game" type="Node"]
 
 [node name="player" type="KinematicBody2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( -32, 266 )
 transform/scale = Vector2( 0.2, 0.2 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.583977, 1.75194 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.54654, 14.4316 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -99,7 +98,7 @@ texture = ExtResource( 2 )
 
 [node name="shape" type="CollisionShape2D" parent="player"]
 
-transform/pos = Vector2( 0.583977, 1.75194 )
+transform/pos = Vector2( 1.54654, 14.4316 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -227,7 +226,6 @@ texture = ExtResource( 15 )
 
 [node name="Parallax1" type="ParallaxBackground" parent="."]
 
-editor/display_folded = true
 layer = 0
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -346,8 +344,8 @@ transform/pos = Vector2( 4494, 1485 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 19 )]
 
-editor/display_folded = true
-transform/pos = Vector2( 1550, 356 )
+transform/pos = Vector2( 1547.84, 360.323 )
+collision/layers = 6
 
 
 [editable path="KinematicBody2D"]
