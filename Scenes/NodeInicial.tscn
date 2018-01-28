@@ -16,7 +16,7 @@ var cont = 0
 func _ready():
 	set_process(true);
 	play(\"transicao\", false)
-	get_parent().get_node(\"SamplePlayer\").play(\"BridgeAyahuasca\", false)
+	#get_parent().get_node(\"SamplePlayer\").play(\"BridgeAyahuasca\", false)
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
