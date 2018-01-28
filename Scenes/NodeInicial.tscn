@@ -2,7 +2,7 @@
 
 [ext_resource path="res://transiçãoInicialAnimação.tres" type="Animation" id=1]
 [ext_resource path="res://Sprites/LOGO.png" type="Texture" id=2]
-[ext_resource path="res://Audio/musicas/drive-download-20180127T224213Z-001/Intro - Ayahuasca.wav" type="Sample" id=3]
+[ext_resource path="res://Audio/Music/Bridge - Ayahuasca.wav" type="Sample" id=3]
 
 [sub_resource type="GDScript" id=1]
 
@@ -16,7 +16,7 @@ var cont = 0
 func _ready():
 	set_process(true);
 	play(\"transicao\", false)
-	get_parent().get_node(\"SamplePlayer\").play(\"IntroAyahuasca\", false)
+	get_parent().get_node(\"SamplePlayer\").play(\"BridgeAyahuasca\", false)
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
@@ -30,7 +30,7 @@ func _process(delta):
 
 [sub_resource type="SampleLibrary" id=2]
 
-samples/IntroAyahuasca = {
+"samples/Bridge - Ayahuasca" = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
@@ -74,16 +74,15 @@ color = Color( 0.0352941, 0.0470588, 0.0862745, 1 )
 
 [node name="TextureFrame" type="TextureFrame" parent="."]
 
-visibility/opacity = 0.0
-rect/scale = Vector2( 1.45, 1.45 )
+rect/scale = Vector2( 0.93, 1.2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 7.0
-margin/top = -7.0
-margin/right = 897.0
-margin/bottom = 504.0
+margin/left = -3.0
+margin/top = -6.0
+margin/right = 871.0
+margin/bottom = 505.0
 texture = ExtResource( 2 )
 stretch_mode = 0
 
