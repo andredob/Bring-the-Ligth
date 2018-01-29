@@ -109,7 +109,6 @@ draw_bg = true
 
 [node name="player" type="KinematicBody2D"]
 
-editor/display_folded = true
 transform/scale = Vector2( 0.2, 0.2 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )

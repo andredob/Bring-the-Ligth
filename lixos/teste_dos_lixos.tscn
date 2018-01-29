@@ -2,8 +2,7 @@
 
 [ext_resource path="res://Scenes/Tilset.tres" type="TileSet" id=1]
 [ext_resource path="res://Entities/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Entities/MegaFantasma.tscn" type="PackedScene" id=3]
-
+[ext_resource path="res://lixos/Leecher.tscn" type="PackedScene" id=3]
 
 [node name="teste_dos_lixos" type="Node"]
 
@@ -30,9 +29,9 @@ tile_data = IntArray( -65514, 0, 65535, 1, 22, 0, 131071, 0, 65558, 0, 196607, 0
 
 transform/pos = Vector2( 53.0007, 465.848 )
 
-[node name="MegaFantasma" parent="." instance=ExtResource( 3 )]
+[node name="leecher" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 959.332, 436.993 )
-transform/scale = Vector2( -0.310664, 0.310664 )
+transform/pos = Vector2( 634.444, 561.526 )
 
 
+[editable path="leecher"]

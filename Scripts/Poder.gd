@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 var vel = 500
 var time = 100
 
@@ -18,19 +18,12 @@ func _process(delta):
 
 
 
-func _on_Area2D_body_enter( body ):
-	if body.get_name() == "pinguin":
-		body.queue_free()
-		queue_free()
-	if body.get_name() == "Fantasma":
-		body.queue_free()
-		queue_free()
-	if body.get_name() == "bola":
-		body.queue_free()
-		queue_free()
-	if body.get_name() == "monstrao":
-		body.queue_free()
-		queue_free()
-	
-	
-	pass # replace with function body
+
+
+
+func _on_shoot_body_enter( body ):
+	if body.get_name()!= "TileMap":
+		if body.get_layer_mask()==4:
+			body.dano()
+	queue_free()
+	pass 

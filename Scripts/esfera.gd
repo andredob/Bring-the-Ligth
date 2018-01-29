@@ -25,7 +25,4 @@ func _fixed_process(delta):
 	get_node("Sprite").set_rot(aux)
 
 
-func _on_VisibilityNotifier2D_exit_screen():
-	print("saiu")
-	queue_free()
-	pass 
+
