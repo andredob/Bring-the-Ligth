@@ -6,8 +6,8 @@ func _ready():
 	dano = get_parent().DANO
 	pass
 
-func _on_areadedano_body_enter( body ):
+func _on_AreaDeDano_body_enter( body ):
 	if body.get_name()  != "TileMap":
 		if body.get_layer_mask() == 1:
 			body.dano(dano)
-	pass
+	pass # replace with function body

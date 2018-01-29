@@ -35,6 +35,7 @@ var pre_shoot = preload("res://Entities/Poder.tscn")
 var vida = 100
 var isLive = true
 var timerWalk = 0
+var pode_shoot
 
 var shoot = SHOOT_DELAY
 
@@ -46,6 +47,12 @@ func _input(ev):
 
 func _fixed_process(delta):
 	shoot -= 1
+	if vida <= 10:
+		pode_shoot = false
+	else :
+		pode_shoot = true
+	
+	
 	# Create forces
 	var force = Vector2(0, GRAVITY)
 	
@@ -158,17 +165,8 @@ func _fixed_process(delta):
 	on_air_time += delta
 	prev_jump_pressed = jump
 	if shoot <= 0:
-		if Input.is_action_pressed("shoot"):
-			get_node("SamplePlayer").play("lightningBall", false)
-			var tiro = pre_shoot.instance()
-			vida -=1
-			var dire = get_global_mouse_pos() - get_global_pos()
-			dire  = dire.normalized()
-			tiro.dir = dire 
-			tiro.set_global_pos(get_global_pos())
-			get_parent().add_child(tiro)
-			shoot = SHOOT_DELAY
-		
+		if Input.is_action_pressed("shoot")&& pode_shoot:
+			shoot()
 		pass
 	
 	if animacao != nova_animacao:
@@ -181,9 +179,22 @@ func _ready():
 	var cena = get_tree().get_current_scene()
 	set_fixed_process(true)
 	get_node("MusicPlayer").play("transmissao", true)
+	pode_shoot = true
 	
 func dano(dano):
 	vida-=dano
+	pass
+	
+func shoot():
+	get_node("SamplePlayer").play("lightningBall", false)
+	var tiro = pre_shoot.instance()
+	vida -=1
+	var dire = get_global_mouse_pos() - get_global_pos()
+	dire  = dire.normalized()
+	tiro.dir = dire 
+	tiro.set_global_pos(get_global_pos())
+	get_parent().add_child(tiro)
+	shoot = SHOOT_DELAY
 	pass
 
 func vidaManager():

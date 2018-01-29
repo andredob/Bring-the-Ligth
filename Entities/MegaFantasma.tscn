@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/MegaFantasma.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/fantasma.png" type="Texture" id=2]
-[ext_resource path="res://Script/areaDeDano.gd" type="Script" id=3]
+[ext_resource path="res://area2dMF.gd" type="Script" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 

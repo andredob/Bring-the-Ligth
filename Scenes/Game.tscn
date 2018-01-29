@@ -10,7 +10,7 @@
 [ext_resource path="res://Entities/plataformaCai.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Entities/Esfera.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Entities/MegaFantasma.tscn" type="PackedScene" id=10]
-[ext_resource path="res://lixos/Leecher.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Entities/Leecher.tscn" type="PackedScene" id=11]
 
 [node name="Game" type="Node"]
 
@@ -287,7 +287,6 @@ transform/pos = Vector2( 7287.12, 11.4063 )
 
 [node name="MegaFantasma" parent="." instance=ExtResource( 10 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 2061, 46 )
 transform/scale = Vector2( 0.328125, 0.328125 )
 
@@ -297,7 +296,7 @@ transform/pos = Vector2( 892.952, -688.762 )
 
 [node name="leecher" parent="." instance=ExtResource( 11 )]
 
-transform/pos = Vector2( 2020.12, 590.19 )
+transform/pos = Vector2( 2026.94, 603.91 )
 
 
 [editable path="TileMap"]

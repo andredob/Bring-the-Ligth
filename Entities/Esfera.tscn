@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/esfera.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/112px-Giant-Ball.tex" type="Texture" id=2]
-[ext_resource path="res://Script/areaDeDano.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/area2dEsfera.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
