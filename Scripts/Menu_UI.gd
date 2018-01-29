@@ -49,3 +49,9 @@ func _on_Bt_resume_pressed():
 
 func _on_Bt_quit_pressed():
 	get_tree().change_scene("Scenes/Menu_UI.tscn");
+
+
+func _on_ok_pressed():
+	credits.hide();
+	mainMenu.show();
+	pass # replace with function body

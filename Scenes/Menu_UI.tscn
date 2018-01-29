@@ -620,8 +620,6 @@ max_lines_visible = -1
 
 [connection signal="pressed" from="Main Menu/VBoxContainer/MENU_Fixed/Bt_startGame" to="." method="_on_Bt_newGame_pressed"]
 
-[connection signal="pressed" from="Main Menu/VBoxContainer/MENU_Fixed/Bt_score" to="." method="_on_Bt_options_pressed"]
-
 [connection signal="pressed" from="Main Menu/VBoxContainer/MENU_Fixed/Bt_credits" to="." method="_on_Bt_quitGame_pressed"]
 
 [connection signal="pressed" from="Options_UI/MarginContainer/VBoxContainer/Bt_Back" to="." method="_on_Bt_Back_pressed"]
