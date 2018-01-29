@@ -94,8 +94,8 @@ func _fixed_process(delta):
 			nova_animacao = "parado"
 	else :
 		nova_animacao = "pular"
-		
 	
+	vidaManager()
 	
 	if (stop):
 		var vsign = sign(velocity.x)
@@ -117,6 +117,7 @@ func _fixed_process(delta):
 	motion = move(motion)
 	
 	var floor_velocity = Vector2()
+	
 	
 	if (is_colliding()):
 		# You can check which tile was collision against with this
@@ -171,6 +172,7 @@ func _fixed_process(delta):
 		if Input.is_action_pressed("shoot"):
 			get_node("SamplePlayer").play("lightningBall", false)
 			var tiro = pre_shoot.instance()
+			vida -=1
 			var dire = get_global_mouse_pos() - get_global_pos()
 			dire  = dire.normalized()
 			tiro.dir = dire 
@@ -186,8 +188,6 @@ func _fixed_process(delta):
 
  var cena
 
-
-
 func _ready():
 	var cena = get_tree().get_current_scene()
 	set_fixed_process(true)
@@ -195,10 +195,20 @@ func _ready():
 	
 func _on_Area2D_body_enter( body ):
 	if body.get_name() == "pinguin":
-		get_parent().dano(10)
+		vida-=10
+		print(get_parent().get_name())
 		print("bateu")
 	
 	pass # replace with function body
 
-
+func vidaManager():
+	if vida <= 0:
+		get_tree().change_scene("Scenes/GameOver.tscn")
+		pass
+	get_node("CanvasLayer/Life").set_value(vida)
+	
+	if (get_pos().y > 1900):
+		vida = 0
+		pass
+	pass
 

@@ -32,6 +32,7 @@ var movement = 40
 var distance2Hero = 1000
 var viewRange = 150
 var shootTime = SHOOT_DELAY
+var timerDamage = 1
 onready var player = get_parent().get_node(\"player\")
 var shootPrefab = preload(\"res://Entities/EnergyCell.tscn\")
  
@@ -42,6 +43,7 @@ func _ready():
  
 # Processing
 func _fixed_process(delta):
+	timerDamage += delta
 	var distance2Player = get_global_pos().distance_to(player.get_global_pos());
 	
 	# Add Gravity
@@ -70,6 +72,12 @@ func _fixed_process(delta):
 			
 		if(player.get_global_pos().x < get_global_pos().x):
 			print(\"Player à vista\")
+			
+			print(timerDamage)
+			if(timerDamage >= 1):
+				player.vida -= 10
+				timerDamage = 0
+			
 			get_node(\"SamplePlayer\").play(\"pinguinRosnando\")
 			movement = -40
 			
