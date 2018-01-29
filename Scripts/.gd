@@ -10,7 +10,7 @@ extends KinematicBody2D
 const GRAVITY = 500.0 # Pixels/second
 
 # Angle in degrees towards either side that the player can consider "floor"
-const FLOOR_ANGLE_TOLERANCE = 45
+const FLOOR_ANGLE_TOLERANCE = 40
 const WALK_FORCE = 600
 const WALK_MIN_SPEED = 10
 const WALK_MAX_SPEED = 300
@@ -133,11 +133,22 @@ func _fixed_process(delta):
 		
 		
 		if (on_air_time == 0 and force.x == 0 and get_travel().length() < SLIDE_STOP_MIN_TRAVEL and abs(velocity.x) < SLIDE_STOP_VELOCITY and get_collider_velocity() == Vector2()):
+			# Since this formula will always slide the character around, 
+			# a special case must be considered to to stop it from moving 
+			# if standing on an inclined floor. Conditions are:
+			# 1) Standing on floor (on_air_time == 0)
+			# 2) Did not move more than one pixel (get_travel().length() < SLIDE_STOP_MIN_TRAVEL)
+			# 3) Not moving horizontally (abs(velocity.x) < SLIDE_STOP_VELOCITY)
+			# 4) Collider is not moving
+			
 			revert_motion()
 			velocity.y = 0.0
 		else:
+			# For every other case of motion, our motion was interrupted.
+			# Try to complete the motion by "sliding" by the normal
 			motion = n.slide(motion)
 			velocity = n.slide(velocity)
+			# Then move again
 			move(motion)
 	
 	if (floor_velocity != Vector2()):
@@ -182,9 +193,13 @@ func _ready():
 	set_fixed_process(true)
 	get_node("MusicPlayer").play("transmissao", true)
 	
-func dano(dano):
-	vida-=dano
-	pass
+func _on_Area2D_body_enter( body ):
+	if body.get_name() == "pinguin":
+		vida-=10
+		print(get_parent().get_name())
+		print("bateu")
+	
+	pass # replace with function body
 
 func vidaManager():
 	if vida <= 0:

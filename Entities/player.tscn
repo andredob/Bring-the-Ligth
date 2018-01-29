@@ -3,23 +3,23 @@
 [ext_resource path="res://Scripts/.gd" type="Script" id=1]
 [ext_resource path="res://playerSamplePlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://playerWalkPlayer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/normal.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Pula3.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/anda1.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/anda2.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/anda3.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/anda4.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/anda5.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/anda6.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Pula1.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Pula2.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/Pula3.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/normal.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Pula1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Pula2.png" type="Texture" id=13]
 [ext_resource path="res://Audio/Music/03 - Transmissão.wav" type="Sample" id=14]
 [ext_resource path="res://Scenes/playerLife.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 64.416, 226.92 )
+extents = Vector2( 64.416, 211.752 )
 
 [sub_resource type="Animation" id=2]
 
@@ -52,7 +52,7 @@ tracks/0/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -69,7 +69,7 @@ tracks/0/keys = {
 "times": FloatArray( 0, 0.1, 0.2 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 4 ) ]
 }
 
 [sub_resource type="SampleLibrary" id=5]
@@ -109,11 +109,10 @@ draw_bg = true
 
 [node name="player" type="KinematicBody2D"]
 
-editor/display_folded = true
 transform/scale = Vector2( 0.2, 0.2 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.39574, 12.2954 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.583977, 1.75194 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -133,7 +132,7 @@ texture = ExtResource( 4 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 1.39574, 12.2954 )
+transform/pos = Vector2( 0.583977, 1.75194 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -153,7 +152,7 @@ autoplay = ""
 
 [node name="RayE" type="RayCast2D" parent="."]
 
-transform/pos = Vector2( -62.9752, 239.077 )
+transform/pos = Vector2( -64.0892, 213.14 )
 enabled = true
 cast_to = Vector2( 0, 5 )
 layer_mask = 2
@@ -161,7 +160,7 @@ type_mask = 15
 
 [node name="RayD" type="RayCast2D" parent="."]
 
-transform/pos = Vector2( 65.5851, 238.876 )
+transform/pos = Vector2( 64.8186, 213.412 )
 enabled = true
 cast_to = Vector2( 0, 5 )
 layer_mask = 2
