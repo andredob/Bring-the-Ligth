@@ -12,7 +12,7 @@ radius = 58.2205
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 62.5289
+radius = 66.213
 
 [node name="Esfera" type="KinematicBody2D"]
 
@@ -21,7 +21,7 @@ input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-collision/layers = 8
+collision/layers = 4
 collision/mask = 524289
 collision/margin = 0.08
 script/script = ExtResource( 1 )
@@ -52,7 +52,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision/layers = 4
+collision/layers = 0
 script/script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeDano"]

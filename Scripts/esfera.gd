@@ -14,10 +14,10 @@ func _process(delta):
 	pass
 	
 func _on_VisibilityNotifier2D_enter_screen():
-	print ("entrou tela bola")
 	set_fixed_process(true)
 	
-
+func dano():
+	pass
 
 func _fixed_process(delta):
 	translate(Vector2(-1,0)*vel*delta)

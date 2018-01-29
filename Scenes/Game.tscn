@@ -16,7 +16,8 @@
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 1726.64, 465.792 )
+transform/pos = Vector2( 2571.78, 192.485 )
+collision/mask = 5
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
 
