@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://Scripts/Poder.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Poder.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/ground melhorado/luz tiro.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 25.318
+
+[node name="shoot" type="KinematicBody2D"]
+
+transform/scale = Vector2( 0.3, 0.3 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -1, -2 )
+shapes/0/trigger = false
+collision/layers = 8
+collision/mask = 8
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 0.353176 )
+transform/scale = Vector2( 0.293651, 0.293651 )
+texture = ExtResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="Sprite"]
+
+transform/pos = Vector2( -6.77442, -1.93555 )
+enabled = true
+editor_only = false
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 2.0
+color = Color( 0.992188, 0.992188, 0.992188, 1 )
+energy = 10.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -1, -2 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+
