@@ -191,7 +191,7 @@ func _fixed_process(delta):
 func _ready():
 	var cena = get_tree().get_current_scene()
 	set_fixed_process(true)
-	get_node("SamplePlayer").play("BridgeAyahuasca", false)
+	get_node("MusicPlayer").play("transmissao", true)
 	
 func _on_Area2D_body_enter( body ):
 	if body.get_name() == "pinguin":
