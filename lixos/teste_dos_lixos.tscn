@@ -2,8 +2,7 @@
 
 [ext_resource path="res://Scenes/Tilset.tres" type="TileSet" id=1]
 [ext_resource path="res://Entities/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Entities/Leecher.tscn" type="PackedScene" id=3]
-
+[ext_resource path="res://lixos/Fantasma.tscn" type="PackedScene" id=3]
 
 [node name="teste_dos_lixos" type="Node"]
 
@@ -30,9 +29,8 @@ tile_data = IntArray( -65514, 0, 65535, 1, 22, 0, 131071, 0, 65558, 0, 196607, 0
 
 transform/pos = Vector2( 53.0007, 465.848 )
 
-[node name="leecher" parent="." instance=ExtResource( 3 )]
+[node name="Fantasma" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 634.444, 561.526 )
+transform/pos = Vector2( 428.813, 473.537 )
 
 
-[editable path="leecher"]

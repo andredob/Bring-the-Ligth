@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=1]
+[gd_scene load_steps=24 format=1]
 
 [ext_resource path="res://Scripts/.gd" type="Script" id=1]
 [ext_resource path="res://playerSamplePlayer.tscn" type="PackedScene" id=2]
@@ -14,7 +14,8 @@
 [ext_resource path="res://Sprites/Pula2.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Pula3.png" type="Texture" id=13]
 [ext_resource path="res://Audio/Music/03 - Transmissão.wav" type="Sample" id=14]
-[ext_resource path="res://Scenes/playerLife.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scripts/life.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/playerLife.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -208,14 +209,16 @@ layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
+script/script = ExtResource( 15 )
 
-[node name="Life" parent="CanvasLayer" instance=ExtResource( 15 )]
+[node name="Life" parent="CanvasLayer" instance=ExtResource( 16 )]
 
 margin/left = 249.0
 margin/top = 575.0
-margin/right = 564.0
+margin/right = 609.0
 margin/bottom = 591.0
 custom_styles/fg = SubResource( 6 )
 custom_styles/bg = SubResource( 7 )
+range/step = 0.0
 
 

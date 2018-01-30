@@ -32,7 +32,8 @@ var nova_animacao
 var animacao
 var mouse_pos
 var pre_shoot = preload("res://Entities/Poder.tscn")
-var vida = 100
+var vida 
+const VINDAMAX = 100
 var isLive = true
 var timerWalk = 0
 var pode_shoot
@@ -180,6 +181,7 @@ func _ready():
 	set_fixed_process(true)
 	get_node("MusicPlayer").play("transmissao", true)
 	pode_shoot = true
+	vida = VINDAMAX
 	
 func dano(dano):
 	vida-=dano

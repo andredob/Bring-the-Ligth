@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://Entities/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Mapa2.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Entities/Esfera.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Entities/MegaFantasma.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Entities/Leecher.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Entities/Fantasma.tscn" type="PackedScene" id=12]
 
 [node name="Game" type="Node"]
 
@@ -287,6 +288,7 @@ transform/pos = Vector2( 7287.12, 11.4063 )
 
 [node name="MegaFantasma" parent="." instance=ExtResource( 10 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 2061, 46 )
 transform/scale = Vector2( 0.328125, 0.328125 )
 
@@ -297,6 +299,22 @@ transform/pos = Vector2( 892.952, -688.762 )
 [node name="leecher" parent="." instance=ExtResource( 11 )]
 
 transform/pos = Vector2( 2026.94, 603.91 )
+
+[node name="Fantasma" parent="." instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 4513.65, 1561.2 )
+
+[node name="Fantasma1" parent="." instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 2179.54, 128.738 )
+
+[node name="Fantasma2" parent="." instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 1627.07, 369.006 )
+
+[node name="Fantasma3" parent="." instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 1806.34, 514.277 )
 
 
 [editable path="TileMap"]
