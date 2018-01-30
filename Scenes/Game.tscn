@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://Entities/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Mapa2.tscn" type="PackedScene" id=2]
@@ -6,18 +6,19 @@
 [ext_resource path="res://Sprites/ff2.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/ff3.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/nevOA.png" type="Texture" id=6]
-[ext_resource path="res://Entities/PlataformaSobe.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Entities/plataformaCai.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Entities/Esfera.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Entities/MegaFantasma.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Entities/Leecher.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Entities/Fantasma.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Entities/LuzesParticulas.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Entities/PlataformaSobe.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Entities/plataformaCai.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Entities/Esfera.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Entities/MegaFantasma.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Entities/Leecher.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Entities/Fantasma.tscn" type="PackedScene" id=13]
 
 [node name="Game" type="Node"]
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 2571.78, 192.485 )
+transform/pos = Vector2( -31.4657, 266.893 )
 collision/mask = 5
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
@@ -105,7 +106,6 @@ transform/pos = Vector2( 10094, -199.479 )
 
 [node name="Parallax" type="ParallaxBackground" parent="."]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -181,112 +181,122 @@ motion/mirroring = Vector2( 0, 0 )
 transform/pos = Vector2( 477, 202 )
 texture = ExtResource( 6 )
 
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax1"]
+
+motion/scale = Vector2( 1, 1 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 500, 0 )
+
+[node name="Luzes" parent="Parallax1/ParallaxLayer" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 159.677, 210.857 )
+
 [node name="plataformas" type="Node" parent="."]
 
 editor/display_folded = true
 
-[node name="PlataformaSobe" parent="plataformas" instance=ExtResource( 7 )]
+[node name="PlataformaSobe" parent="plataformas" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 2336.89, 574.502 )
 
-[node name="PlataformaSobe3" parent="plataformas" instance=ExtResource( 7 )]
+[node name="PlataformaSobe3" parent="plataformas" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 4668, 1052 )
 transform/scale = Vector2( 0.4, 0.227331 )
 
-[node name="PlataformaSobe4" parent="plataformas" instance=ExtResource( 7 )]
+[node name="PlataformaSobe4" parent="plataformas" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 4582, 1238 )
 transform/scale = Vector2( 0.4, 0.227331 )
 
-[node name="PlataformaSobe5" parent="plataformas" instance=ExtResource( 7 )]
+[node name="PlataformaSobe5" parent="plataformas" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 4664, 1416 )
 transform/scale = Vector2( 0.4, 0.227331 )
 
-[node name="PlataformaSobe2" parent="plataformas" instance=ExtResource( 7 )]
+[node name="PlataformaSobe2" parent="plataformas" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 5940, 102 )
 
-[node name="PlataformaSobe1" parent="plataformas" instance=ExtResource( 7 )]
+[node name="PlataformaSobe1" parent="plataformas" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 4406, 639 )
 
-[node name="PlataformaCai" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 2742, 906 )
 transform/scale = Vector2( 1.72769, 0.643082 )
 
-[node name="PlataformaCai1" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai1" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 3330, 906 )
 transform/scale = Vector2( 1.72769, 0.643082 )
 
-[node name="PlataformaCai 2" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai 2" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 5231, 538 )
 
-[node name="PlataformaCai3" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai3" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 5308, 440 )
 
-[node name="PlataformaCai4" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai4" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 5232.34, 339.405 )
 
-[node name="PlataformaCai5" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai5" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 5314.66, 242.878 )
 
-[node name="PlataformaCai6" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai6" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 5646, 622 )
 
-[node name="PlataformaCai7" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai7" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 6042, 620 )
 
-[node name="PlataformaCai8" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai8" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 6261, 619 )
 
-[node name="PlataformaCai9" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai9" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 5690, 366 )
 
-[node name="PlataformaCai10" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai10" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 5767, 162 )
 
-[node name="PlataformaCai11" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai11" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 5822, -14 )
 
-[node name="PlataformaCai12" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai12" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 5741, -123 )
 
-[node name="PlataformaCai13" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai13" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 6385, -219 )
 
-[node name="PlataformaCai14" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai14" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 4810, 1423 )
 
-[node name="PlataformaCai15" parent="plataformas" instance=ExtResource( 8 )]
+[node name="PlataformaCai15" parent="plataformas" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 4494, 1485 )
 
-[node name="Esfera" parent="." instance=ExtResource( 9 )]
+[node name="Esfera" parent="." instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 1488, 379 )
 
-[node name="Esfera1" parent="." instance=ExtResource( 9 )]
+[node name="Esfera1" parent="." instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 7287.12, 11.4063 )
 
-[node name="MegaFantasma" parent="." instance=ExtResource( 10 )]
+[node name="MegaFantasma" parent="." instance=ExtResource( 11 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 2061, 46 )
@@ -296,23 +306,23 @@ transform/scale = Vector2( 0.328125, 0.328125 )
 
 transform/pos = Vector2( 892.952, -688.762 )
 
-[node name="leecher" parent="." instance=ExtResource( 11 )]
+[node name="leecher" parent="." instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 2026.94, 603.91 )
 
-[node name="Fantasma" parent="." instance=ExtResource( 12 )]
+[node name="Fantasma" parent="." instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 4513.65, 1561.2 )
 
-[node name="Fantasma1" parent="." instance=ExtResource( 12 )]
+[node name="Fantasma1" parent="." instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 2179.54, 128.738 )
 
-[node name="Fantasma2" parent="." instance=ExtResource( 12 )]
+[node name="Fantasma2" parent="." instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 1627.07, 369.006 )
 
-[node name="Fantasma3" parent="." instance=ExtResource( 12 )]
+[node name="Fantasma3" parent="." instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 1806.34, 514.277 )
 
