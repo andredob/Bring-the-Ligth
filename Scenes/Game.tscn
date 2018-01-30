@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://Entities/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/ff.png" type="Texture" id=2]
@@ -13,12 +13,13 @@
 [ext_resource path="res://Entities/MegaFantasma.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Entities/Leecher.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Entities/Fantasma.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Entities/luz_coletavel.tscn" type="PackedScene" id=14]
 
 [node name="Game" type="Node"]
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 6349.57, 373.25 )
+transform/pos = Vector2( -34.1611, 268.989 )
 collision/mask = 5
 
 [node name="Parallax" type="ParallaxBackground" parent="."]
@@ -76,6 +77,7 @@ texture = ExtResource( 4 )
 
 [node name="Parallax1" type="ParallaxBackground" parent="."]
 
+editor/display_folded = true
 layer = 0
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -102,6 +104,7 @@ texture = ExtResource( 5 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax1"]
 
+editor/display_folded = true
 motion/scale = Vector2( 1, 1 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1000, 1000 )
@@ -292,10 +295,11 @@ transform/pos = Vector2( 4494, 1485 )
 
 [node name="Esfera" parent="." instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 1488, 379 )
+transform/pos = Vector2( 1484.3, 349.39 )
 
 [node name="Esfera1" parent="." instance=ExtResource( 10 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 7287.12, 11.4063 )
 
 [node name="VisibilityNotifier2D" parent="Esfera1"]
@@ -305,6 +309,7 @@ transform/scale = Vector2( 0.0741824, 0.17558 )
 
 [node name="MegaFantasma" parent="." instance=ExtResource( 11 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 2061, 46 )
 transform/scale = Vector2( 0.328125, 0.328125 )
 
@@ -331,6 +336,43 @@ transform/pos = Vector2( 1627.07, 369.006 )
 [node name="Fantasma3" parent="." instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 1806.34, 514.277 )
+
+[node name="coletavel" type="Node" parent="."]
+
+[node name="luz_coletavel" parent="coletavel" instance=ExtResource( 14 )]
+
+transform/pos = Vector2( 1322.22, 458.722 )
+transform/scale = Vector2( 0.241046, 0.241046 )
+
+[node name="luz_coletavel1" parent="coletavel" instance=ExtResource( 14 )]
+
+transform/pos = Vector2( 2463.37, 419.67 )
+transform/scale = Vector2( 0.222658, 0.222658 )
+
+[node name="luz_coletavel2" parent="coletavel" instance=ExtResource( 14 )]
+
+transform/pos = Vector2( 2166.4, 122.877 )
+transform/scale = Vector2( 0.233029, 0.233029 )
+
+[node name="luz_coletavel3" parent="coletavel" instance=ExtResource( 14 )]
+
+transform/pos = Vector2( 5278.01, -49.9459 )
+transform/scale = Vector2( 0.16578, 0.16578 )
+
+[node name="luz_coletavel4" parent="coletavel" instance=ExtResource( 14 )]
+
+transform/pos = Vector2( 4614.41, 1536.4 )
+transform/scale = Vector2( 0.226377, 0.226377 )
+
+[node name="luz_coletavel5" parent="coletavel" instance=ExtResource( 14 )]
+
+transform/pos = Vector2( 7776.75, 67.122 )
+transform/scale = Vector2( 0.238279, 0.238279 )
+
+[node name="luz_coletavel6" parent="coletavel" instance=ExtResource( 14 )]
+
+transform/pos = Vector2( 7471.95, -274.421 )
+transform/scale = Vector2( 0.224307, 0.224307 )
 
 
 [editable path="TileMap"]

@@ -10,7 +10,7 @@ extends KinematicBody2D
 const GRAVITY = 500.0 # Pixels/second
 
 # Angle in degrees towards either side that the player can consider "floor"
-const FLOOR_ANGLE_TOLERANCE = 45
+const FLOOR_ANGLE_TOLERANCE = 60
 const WALK_FORCE = 600
 const WALK_MIN_SPEED = 10
 const WALK_MAX_SPEED = 300
@@ -20,8 +20,8 @@ const JUMP_MAX_AIRBORNE_TIME = 0.5
 const SHOOT_DELAY = 20
 
 
-const SLIDE_STOP_VELOCITY = 1.0 # One pixel per second
-const SLIDE_STOP_MIN_TRAVEL = 1.0 # One pixel
+const SLIDE_STOP_VELOCITY = 100.0 # One pixel per second
+const SLIDE_STOP_MIN_TRAVEL = 100.0 # One pixel
 
 var velocity = Vector2()
 var on_air_time = 100

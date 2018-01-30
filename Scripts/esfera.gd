@@ -4,6 +4,7 @@ const GRAVIDADE = 400
 const DANO = 30
 var vel =150
 var aux = 1
+var time = 0
 
 func _ready():
 	set_process(true)
@@ -23,6 +24,9 @@ func _fixed_process(delta):
 	translate(Vector2(-1,0)*vel*delta)
 	aux += 0.05
 	get_node("Sprite").set_rot(aux)
+	time +=1
+	if time == 15*60:
+		queue_free()
 
 
 

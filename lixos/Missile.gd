@@ -8,11 +8,12 @@ func _ready():
 	pass
 
 func _process(delta):
-	var targetPos = target.get_global_pos()
-	set_rot(get_pos().angle_to_point(targetPos))
-	move_local_y(delta * -speed, false)
+	if  target.has_method("get_global_pos"):
+		var targetPos = target.get_global_pos()
+		set_rot(get_pos().angle_to_point(targetPos))
+		move_local_y(delta * -speed, false)
 	
-	var distanceFromLeecher = get_global_pos().distance_to(target.get_global_pos());
-	if(distanceFromLeecher <= 2): 
-		queue_free()
+		var distanceFromLeecher = get_global_pos().distance_to(target.get_global_pos());
+		if(distanceFromLeecher <= 2): 
+			queue_free()
 	

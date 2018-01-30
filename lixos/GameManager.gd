@@ -3,7 +3,7 @@ extends Node
 var m = Vector2()
 var p = Vector2()
 export var bullet_scene
-onready var camera = get_node("camera")
+
 #var vector
 func _ready():
 	set_process_input(true)
