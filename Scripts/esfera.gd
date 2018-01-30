@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-const GRAVIDADE = 300
+const GRAVIDADE = 400
 const DANO = 30
-var vel =100
+var vel =150
 var aux = 1
 
 func _ready():
